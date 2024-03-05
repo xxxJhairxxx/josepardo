@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_admision_admision_banners",
+  "info": {
+    "displayName": "AdmisionBanner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    },
+    "texti": {
+      "type": "text"
+    }
+  }
+}

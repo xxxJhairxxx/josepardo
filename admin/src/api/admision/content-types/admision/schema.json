@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "admisions",
+  "info": {
+    "singularName": "admision",
+    "pluralName": "admisions",
+    "displayName": "Admision",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AdmisionBanner": {
+      "displayName": "AdmisionBanner",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-banner"
+    }
+  }
+}
