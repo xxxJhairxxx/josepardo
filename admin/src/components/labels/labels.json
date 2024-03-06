@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_labels_labels",
+  "info": {
+    "displayName": "labels",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "lbl_enviar": {
+      "type": "string"
+    },
+    "lbl_leer_mas": {
+      "type": "string"
+    }
+  }
+}

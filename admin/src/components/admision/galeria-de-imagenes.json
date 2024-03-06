@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_admision_admision_banners",
+  "collectionName": "components_admision_galeria_de_imagenes",
   "info": {
-    "displayName": "AdmisionBanner",
+    "displayName": "Galeria de Imagenes",
     "description": ""
   },
   "options": {},
@@ -11,9 +11,6 @@
     },
     "subtitulo": {
       "type": "string"
-    },
-    "texto": {
-      "type": "text"
     }
   }
 }

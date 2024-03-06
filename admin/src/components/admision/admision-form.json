@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_admision_admision_forms",
+  "info": {
+    "displayName": "AdmisionForm",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "displayName": "input admision",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.input-admision"
+    },
+    "apellido": {
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.input-admision"
+    },
+    "carrera": {
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.input-admision"
+    },
+    "celular": {
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.input-admision"
+    }
+  }
+}

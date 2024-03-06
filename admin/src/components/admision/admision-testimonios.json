@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_admision_admision_testimonios",
+  "info": {
+    "displayName": "AdmisionTestimonios"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    },
+    "Cardtestimonios": {
+      "displayName": "Cardtestimonios",
+      "type": "component",
+      "repeatable": true,
+      "component": "admision.cardtestimonios"
+    }
+  }
+}

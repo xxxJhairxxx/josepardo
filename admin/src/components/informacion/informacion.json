@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_informacion_informacions",
+  "info": {
+    "displayName": "informacion",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "direccion": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "string"
+    },
+    "horario": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "redes_sociales": {
+      "displayName": "Redes Sociales",
+      "type": "component",
+      "repeatable": true,
+      "component": "social-networks.redes-sociales"
+    }
+  }
+}

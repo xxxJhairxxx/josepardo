@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_admision_admision_convenios",
+  "info": {
+    "displayName": "AdmisionConvenios"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_admision_admision_blogs",
+  "info": {
+    "displayName": "AdmisionBlog"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    }
+  }
+}

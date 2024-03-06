@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_admision_cardtestimonios",
+  "info": {
+    "displayName": "Cardtestimonios"
+  },
+  "options": {},
+  "attributes": {
+    "imagen": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "comentario": {
+      "type": "text"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "ocupacion": {
+      "type": "string"
+    }
+  }
+}

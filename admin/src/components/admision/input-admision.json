@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_admision_input_admisions",
+  "info": {
+    "displayName": "input admision"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

@@ -17,6 +17,54 @@
       "type": "component",
       "repeatable": false,
       "component": "admision.admision-banner"
+    },
+    "AdmisionForm": {
+      "displayName": "AdmisionForm",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-form"
+    },
+    "AdmisionEspecialidades": {
+      "displayName": "AdmisionEspecialidades",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-especialidades"
+    },
+    "AdmisionEstudiaconnostros": {
+      "displayName": "AdmisionEstudiaConNosotros",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-estudia-con-nosotros"
+    },
+    "AdmimisionDestacados": {
+      "displayName": "AdminDestacados",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admin-destacados"
+    },
+    "AdmisionGaleria": {
+      "displayName": "Galeria de Imagenes",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.galeria-de-imagenes"
+    },
+    "AdmisionConvenios": {
+      "displayName": "AdmisionConvenios",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-convenios"
+    },
+    "AdmisionTestimonios": {
+      "displayName": "AdmisionTestimonios",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-testimonios"
+    },
+    "AdmisionBlog": {
+      "displayName": "AdmisionBlog",
+      "type": "component",
+      "repeatable": false,
+      "component": "admision.admision-blog"
     }
   }
 }

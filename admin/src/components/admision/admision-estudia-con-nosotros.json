@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_admision_admision_estudia",
+  "info": {
+    "displayName": "AdmisionEstudiaConNosotros",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    },
+    "texto": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Razones": {
+      "displayName": "Razones",
+      "type": "component",
+      "repeatable": true,
+      "component": "admision.razones"
+    }
+  }
+}

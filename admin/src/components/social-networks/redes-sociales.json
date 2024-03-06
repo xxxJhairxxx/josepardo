@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_social_networks_redes_sociales",
+  "info": {
+    "displayName": "Redes Sociales"
+  },
+  "options": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram",
+        "youtube",
+        "twitter",
+        "x",
+        "tiktok"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

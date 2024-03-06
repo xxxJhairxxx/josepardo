@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "generals",
+  "info": {
+    "singularName": "general",
+    "pluralName": "generals",
+    "displayName": "General",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label_buttons": {
+      "displayName": "labels",
+      "type": "component",
+      "repeatable": false,
+      "component": "labels.labels"
+    },
+    "informacion": {
+      "displayName": "informacion",
+      "type": "component",
+      "repeatable": false,
+      "component": "informacion.informacion"
+    }
+  }
+}
