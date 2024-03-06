@@ -1,0 +1,25 @@
+.title-prin {
+  @apply text-[1.8rem] text-secondary font-normal font-primary leading-[1.5] pb-[2rem] relative;
+  &:before {
+    content: "";
+    @apply absolute bottom-0 left-0 w-[4.5rem] h-[5px] rounded-[1rem] bg-primary;
+  }
+  &.center {
+    @apply text-center;
+    &:before {
+      @apply right-0 m-[auto];
+    }
+  }
+  &.none {
+    @apply pb-0;
+    &:before {
+      @apply hidden;
+    }
+  }
+  @screen tablet {
+    @apply text-[2rem];
+  }
+  @screen laptop {
+    font-size: calc(2.7rem * var(--scale));
+  }
+}

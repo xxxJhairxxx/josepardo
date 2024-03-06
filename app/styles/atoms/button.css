@@ -1,0 +1,36 @@
+.button {
+  @apply !bg-primary inline-block text-center rounded-lg font-[500] px-[5rem] py-[0.8rem] w-full text-white;
+  font-size: calc(1.5rem * var(--scale));
+  transition: all 0.5s ease-in-out;
+  &.white {
+    @apply !bg-white text-primary border-primary;
+    border: 1px solid;
+  }
+  @screen laptop {
+    &:hover {
+      @apply !bg-[#F59D12] text-white;
+    }
+    @apply w-fit font-semibold;
+    font-size: calc(1.6rem * var(--scale));
+    padding: calc(1.1rem * var(--scale)) calc(1.7rem * var(--scale));
+  }
+}
+.btnSpecialist {
+  @apply block text-center  text-[1.42rem] bg-primary mx-auto text-white font-[500] py-5 rounded-lg px-[1rem];
+  transition: all 0.5s ease-in-out;
+  @screen tablet {
+    @apply w-fit px-7 mx-auto text-center;
+  }
+  @screen laptop {
+    @apply inline-block;
+    margin-top: calc(1rem * var(--scale));
+    &:hover {
+      @apply bg-[#F59D12];
+    }
+  }
+  &:before {
+    @apply mr-3;
+    font-family: 'icomoon' !important;
+    content: '\e91b';
+  }
+}

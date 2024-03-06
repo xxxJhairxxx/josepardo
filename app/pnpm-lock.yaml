@@ -23,6 +23,9 @@ dependencies:
   react-google-recaptcha:
     specifier: ^2.1.0
     version: 2.1.0(react@18.2.0)
+  react-hook-form:
+    specifier: ^7.45.4
+    version: 7.51.0(react@18.2.0)
   react-markdown:
     specifier: 8.0.4
     version: 8.0.4(@types/react@18.2.63)(react@18.2.0)
@@ -31,6 +34,9 @@ dependencies:
     version: 8.4.4
 
 devDependencies:
+  '@types/fslightbox-react':
+    specifier: ^1.7.3
+    version: 1.7.7
   '@types/node':
     specifier: ^20
     version: 20.11.24
@@ -40,6 +46,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18
     version: 18.2.20
+  '@types/react-google-recaptcha':
+    specifier: 2.1.5
+    version: 2.1.5
   autoprefixer:
     specifier: ^10.0.1
     version: 10.4.18(postcss@8.4.35)
@@ -312,6 +321,12 @@ packages:
       '@types/ms': 0.7.34
     dev: false
 
+  /@types/fslightbox-react@1.7.7:
+    resolution: {integrity: sha512-pp9Y7/+L4NFlMp+PdESx66EG0/m70aqg81FNlLP08dGWvRRSvNJFv08Jc91IEQkbh/C1PpokCekNCWZqpWxiyQ==}
+    dependencies:
+      '@types/react': 18.2.63
+    dev: true
+
   /@types/hast@2.3.10:
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
     dependencies:
@@ -343,6 +358,12 @@ packages:
 
   /@types/react-dom@18.2.20:
     resolution: {integrity: sha512-HXN/biJY8nv20Cn9ZbCFq3liERd4CozVZmKbaiZ9KiKTrWqsP7eoGDO6OOGvJQwoVFuiXaiJ7nBBjiFFbRmQMQ==}
+    dependencies:
+      '@types/react': 18.2.63
+    dev: true
+
+  /@types/react-google-recaptcha@2.1.5:
+    resolution: {integrity: sha512-iWTjmVttlNgp0teyh7eBXqNOQzVq2RWNiFROWjraOptRnb1OcHJehQnji0sjqIRAk9K0z8stjyhU+OLpPb0N6w==}
     dependencies:
       '@types/react': 18.2.63
     dev: true
@@ -2658,6 +2679,15 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-async-script: 1.2.0(react@18.2.0)
+    dev: false
+
+  /react-hook-form@7.51.0(react@18.2.0):
+    resolution: {integrity: sha512-BggOy5j58RdhdMzzRUHGOYhSz1oeylFAv6jUSG86OvCIvlAvS7KvnRY7yoAf2pfEiPN7BesnR0xx73nEk3qIiw==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is@16.13.1:

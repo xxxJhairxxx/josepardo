@@ -1,0 +1,106 @@
+.Header {
+  @apply h-[6.7rem] w-full top-0 flex items-center sticky bg-white;
+  transition: background 0.8s ease;
+  z-index: 400;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px 0px;
+
+  @screen tablet {
+    @apply h-[6.1rem];
+  }
+
+  &.top {
+    .Header-Logo {
+      top: 0;
+    }
+  }
+
+  &-Logo {
+    @apply hidden;
+    transition: all 0.4s ease-in-out;
+    @screen laptop {
+      @apply flex items-start absolute;
+      z-index: 999;
+      height: auto;
+      width: calc(21rem * var(--scale));
+      top: calc(1.25rem * var(--scale));
+      left: 0;
+    }
+  }
+
+  &-Logo2 {
+    @apply flex w-[18.2rem] h-[2.97rem] absolute left-[1.8rem] top-[1.9rem];
+
+    @screen tablet {
+      @apply w-[20.9rem] h-[3.41rem] top-[1.5rem] left-[5rem];
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-phone {
+    @apply h-[3.8rem] w-auto pl-[0.7rem] pr-[1.2rem] py-[1rem] !text-white right-32 font-semibold bg-primary text-[1.6rem] absolute flex items-center  gap-[0.8rem] rounded-l-full rounded-r-full;
+    z-index: 2;
+
+    &-thumb {
+      @apply bg-white w-[3rem] h-[3rem]  rounded-full flex items-center justify-center;
+      img {
+        @apply w-[50%] h-[50%] object-contain;
+      }
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-menuIcon {
+    @apply absolute z-[110];
+    right: 0;
+    top: 0;
+    &.isActive {
+      top: 1.5rem;
+    }
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+  &-ctn {
+    @apply h-full w-full mx-auto relative flex items-center;
+    @screen laptop {
+      width: 78.5%;
+    }
+  }
+
+  &-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @apply fixed inset-0 w-full left-0 top-0 bg-black/40 pointer-events-none h-screen;
+    z-index: 10;
+    @screen laptop {
+      @apply hidden;
+    }
+
+    &.isActive {
+      opacity: 1;
+      @apply pointer-events-auto;
+    }
+  }
+
+  /**=======LAPTOP===============**/
+
+  @screen laptop {
+    @apply bg-white flex items-center !sticky rounded-none;
+    transition: background-color 0.25s ease;
+    height: calc(6rem * var(--scale));
+    left: 0;
+    transform: translateX(0);
+    top: 0;
+    padding: 0;
+    width: 100%;
+    &-ctn {
+      height: auto;
+    }
+  }
+}

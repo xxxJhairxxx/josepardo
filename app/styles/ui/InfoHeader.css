@@ -1,0 +1,39 @@
+.infoHeader {
+  @apply hidden;
+
+  @screen laptop {
+    height: calc(3rem * var(--scale));
+    @apply block bg-white;
+    border-bottom: 0.47px solid #b3b3b3;
+
+    .infoHeader-container {
+      @apply flex justify-start text-white h-fit items-center px-0;
+    }
+
+    &-info {
+      /* border: 1px solid white; */
+      @apply flex items-center;
+      color: #454545;
+
+      &-li {
+        @apply font-light;
+        font-size: calc(1.3rem * var(--scale));
+        padding: calc(0.2rem * var(--scale)) calc(1.9rem * var(--scale));
+        border-right: 0.47px solid #b3b3b3;
+
+        &:first-child {
+          @apply pl-0;
+        }
+
+        a {
+          @apply ml-[0.3rem];
+        }
+
+        .phone-link {
+          @apply font-medium ml-[0.3rem];
+          font-size: calc(1.65rem * var(--scale));
+        }
+      }
+    }
+  }
+}

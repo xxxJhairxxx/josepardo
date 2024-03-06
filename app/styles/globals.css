@@ -1,33 +1,56 @@
+@import './atoms';
+@import './organisms';
+@import './molecules';
+@import './ui';
+@import 'container.css';
+@import 'icons.css';
+@import 'scale.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  font-size: 62.5%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-[#060922];
+  font-size: 1.5rem ;
+  @screen laptop {
+    font-size: max(1.4rem, calc(1.9rem * var(--scale)));
+  }
+
+  &.no-scroll {
+    @apply overflow-hidden;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+textarea {
+  resize: none;
+}
+
+textarea,
+select,
+input {
+  @apply border-none bg-none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.main-page {
+  animation-name: fadeIn;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in;
+  background-image: var(--bg-img);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -1,0 +1,30 @@
+.socials {
+  @apply flex gap-[1rem]  text-white justify-center items-start;
+
+  @screen laptop {
+    gap: calc(1.5rem * var(--scale));
+
+    a {
+      @apply flex items-center;
+      i {
+        font-size: calc(2.3rem * var(--scale));
+      }
+    }
+  }
+
+  &.banner {
+    @apply hidden;
+
+    @screen laptop {
+      @apply flex flex-col absolute;
+      z-index: 10;
+      bottom: calc(7.7rem * var(--scale));
+      left: calc(6.8rem * var(--scale));
+      gap: calc(3rem * var(--scale));
+
+      i {
+        font-size: calc(3.5rem * var(--scale));
+      }
+    }
+  }
+}
