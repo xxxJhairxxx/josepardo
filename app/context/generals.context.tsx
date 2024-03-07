@@ -39,12 +39,15 @@ const initialState: ControllerState = {
 		createdAt: '',
 		updatedAt: '',
 		publishedAt: '',
-		telefono: '',
-		direccion: '',
-		correo: '',
-		horario: '',
-		redes_sociales: [],
-		logo:[],
+		label_buttons: { id: 1, lbl_enviar: '', lbl_leer_mas: '' },
+		informacion: {
+			telefono: '',
+			direccion: '',
+			correo: '',
+			horario: '',
+			redes_sociales: [],
+			logo: [],
+		},
 	},
 };
 

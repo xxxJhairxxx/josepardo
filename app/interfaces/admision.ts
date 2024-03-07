@@ -1,5 +1,6 @@
 /** @format */
 
+import { Message } from 'react-hook-form';
 import { InputForm, MetaSEO, Picture } from '.';
 
 export interface Admision {
@@ -28,13 +29,15 @@ interface AdmisionBanner {
 	subtitulo: string;
 	texto: string;
 }
-interface AdmisionForm {
+export interface AdmisionForm {
 	id: number;
 	nombre: InputForm;
 	apellido: InputForm;
 	carrera: InputForm;
 	celular: InputForm;
+	messages:Message;
 }
+
 interface AdmisionEspecialidades {
 	id: number;
 	titulo: string;

@@ -10,11 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#5389FF',
-        secondary: '#F6961D',
+        secondary: '#FFC107',
       },
       fontFamily: {
         primary: ['var(--font-primary)'],
-        montserrat: ['var(--font-montserrat)'],
       },
       screens: {
         phone: '414px',

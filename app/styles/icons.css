@@ -26,28 +26,22 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-zoom:before {
-    content: '\e906';
+
+  .icon-x:before {
+    content: "\e900";
   }
-  .icon-arrow:before {
-    content: '\e907';
+  .icon-tiktok:before {
+    content: "\e901";
   }
-  .icon-instagram:before {
-    content: '\e900';
+  .icon-youtube:before {
+    content: "\e999";
   }
   .icon-facebook:before {
-    content: '\e901';
+    content: "\ea90";
   }
-  .icon-phone:before {
-    content: '\e902';
+  .icon-instagram:before {
+    content: "\ea92";
   }
-  .icon-email:before {
-    content: '\e903';
+  .icon-twitter:before {
+    content: "\ea96";
   }
-  .icon-schedule:before {
-    content: '\e904';
-  }
-  .icon-phone2:before {
-    content: '\e905';
-  }
-  
