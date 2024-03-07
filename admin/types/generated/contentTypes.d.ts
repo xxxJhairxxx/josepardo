@@ -362,6 +362,109 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdmisionAdmision extends Schema.SingleType {
+  collectionName: 'admisions';
+  info: {
+    singularName: 'admision';
+    pluralName: 'admisions';
+    displayName: 'Admision';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AdmisionBanner: Attribute.Component<'admision.admision-banner'>;
+    AdmisionForm: Attribute.Component<'admision.admision-form'>;
+    AdmisionEspecialidades: Attribute.Component<'admision.admision-especialidades'>;
+    AdmisionEstudiaconnostros: Attribute.Component<'admision.admision-estudia-con-nosotros'>;
+    AdmimisionDestacados: Attribute.Component<'admision.admin-destacados'>;
+    AdmisionGaleria: Attribute.Component<'admision.galeria-de-imagenes'>;
+    AdmisionConvenios: Attribute.Component<'admision.admision-convenios'>;
+    AdmisionTestimonios: Attribute.Component<'admision.admision-testimonios'>;
+    AdmisionBlog: Attribute.Component<'admision.admision-blog'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::admision.admision',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::admision.admision',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEnviromentEnviroment extends Schema.SingleType {
+  collectionName: 'enviroments';
+  info: {
+    singularName: 'enviroment';
+    pluralName: 'enviroments';
+    displayName: 'Enviroment';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ENV: Attribute.Enumeration<['DEVELOPMENT', 'PRODUCTION']> &
+      Attribute.DefaultTo<'DEVELOPMENT'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::enviroment.enviroment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::enviroment.enviroment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGeneralGeneral extends Schema.SingleType {
+  collectionName: 'generals';
+  info: {
+    singularName: 'general';
+    pluralName: 'generals';
+    displayName: 'General';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label_buttons: Attribute.Component<'labels.labels'>;
+    informacion: Attribute.Component<'informacion.informacion'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::general.general',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::general.general',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -781,109 +884,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdmisionAdmision extends Schema.SingleType {
-  collectionName: 'admisions';
-  info: {
-    singularName: 'admision';
-    pluralName: 'admisions';
-    displayName: 'Admision';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    AdmisionBanner: Attribute.Component<'admision.admision-banner'>;
-    AdmisionForm: Attribute.Component<'admision.admision-form'>;
-    AdmisionEspecialidades: Attribute.Component<'admision.admision-especialidades'>;
-    AdmisionEstudiaconnostros: Attribute.Component<'admision.admision-estudia-con-nosotros'>;
-    AdmimisionDestacados: Attribute.Component<'admision.admin-destacados'>;
-    AdmisionGaleria: Attribute.Component<'admision.galeria-de-imagenes'>;
-    AdmisionConvenios: Attribute.Component<'admision.admision-convenios'>;
-    AdmisionTestimonios: Attribute.Component<'admision.admision-testimonios'>;
-    AdmisionBlog: Attribute.Component<'admision.admision-blog'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::admision.admision',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::admision.admision',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiEnviromentEnviroment extends Schema.SingleType {
-  collectionName: 'enviroments';
-  info: {
-    singularName: 'enviroment';
-    pluralName: 'enviroments';
-    displayName: 'Enviroment';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    ENV: Attribute.Enumeration<['DEVELOPMENT', 'PRODUCTION']> &
-      Attribute.DefaultTo<'DEVELOPMENT'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::enviroment.enviroment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::enviroment.enviroment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiGeneralGeneral extends Schema.SingleType {
-  collectionName: 'generals';
-  info: {
-    singularName: 'general';
-    pluralName: 'generals';
-    displayName: 'General';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    label_buttons: Attribute.Component<'labels.labels'>;
-    informacion: Attribute.Component<'informacion.informacion'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::general.general',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::general.general',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -894,6 +894,9 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::admision.admision': ApiAdmisionAdmision;
+      'api::enviroment.enviroment': ApiEnviromentEnviroment;
+      'api::general.general': ApiGeneralGeneral;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::ezforms.submission': PluginEzformsSubmission;
@@ -902,9 +905,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::admision.admision': ApiAdmisionAdmision;
-      'api::enviroment.enviroment': ApiEnviromentEnviroment;
-      'api::general.general': ApiGeneralGeneral;
     }
   }
 }

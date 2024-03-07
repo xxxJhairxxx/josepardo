@@ -1,0 +1,22 @@
+/** @format */
+
+.AdminNavbar {
+	@apply fixed bg-transparent z-50 w-full;
+	height: calc(14rem * var(--scale));
+	&__container {
+		@apply h-full flex  items-center;
+
+		&__info {
+			@apply inline-flex  ml-auto;
+
+			gap: calc(4rem * var(--scale));
+
+			& > li {
+				font-size: calc(1.6rem * var(--scale));
+        i{
+          margin-right: calc(0.5rem * var(--scale));
+        }
+			}
+		}
+	}
+}

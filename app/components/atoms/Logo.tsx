@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 import { useGenerals } from '../../context/generals.context'
+import Thumb from './Thumb'
 
 interface LogoProps {
   className?: string
@@ -9,21 +10,13 @@ interface LogoProps {
 }
 
 export const Logo: FC<LogoProps> = ({ alt = false, className }) => {
-  const { general } = useGenerals()
+  const { general:{informacion:{logo}} } = useGenerals()
 
   return (
-    <Link href={'/'} legacyBehavior>
-      <picture className={`logoCont ${className}`}>
-        {general.logo && (
-          <Image
-            priority
-            src={alt ? general.logo[1].url : general.logo[0].url}
-            width={alt ? general.logo[1].width : general.logo[0].width}
-            height={alt ? general.logo[1].height : general.logo[0].height}
-            alt={'Debt Solution'}
-          ></Image>
+    <Link href={'/'} className={`logoCont ${className}`} legacyBehavior>
+        {logo && (
+          <Thumb full className='logoCont__thumb' image={alt ? logo[1] : logo[0]} />
         )}
-      </picture>
     </Link>
   )
 }

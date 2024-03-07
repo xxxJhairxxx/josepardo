@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container } from '../globals';
 import Image from 'next/image';
+import AdmisionNavbar from '../ui/AdmisionNavbar';
 interface props {
 	titulo: string;
 	subtitulo: string;
@@ -12,6 +13,7 @@ interface props {
 const AdmisionHeader = ({ titulo, subtitulo, texto }: props) => {
 	return (
 		<header className='AdmisionHeader'>
+			<AdmisionNavbar />
 			<Container className='AdmisionHeader__container'>
 				<section className='AdmisionHeader__container__text'>
 					<ul className='AdmisionHeader__container__text-socials'>
