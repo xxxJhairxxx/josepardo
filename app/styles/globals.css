@@ -37,7 +37,7 @@ textarea {
 textarea,
 select,
 input {
-  @apply border-none bg-none;
+  @apply bg-none;
   &:focus {
     outline: none;
   }

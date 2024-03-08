@@ -6,23 +6,29 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Container } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 import { useEffect, useMemo, useState } from 'react';
+import { AdmisionFormp } from '@/interfaces/admision';
+import AdmisionForm from '../molecules/AdmisionForm';
+import { EspecialidadesData } from '@/interfaces';
 interface props {
 	titulo: string;
 	subtitulo: string;
 	texto: string;
+	admisionForm: AdmisionFormp;
+	especialidades: EspecialidadesData[];
 }
 
-const AdmisionHeader = ({ titulo, subtitulo, texto }: props) => {
+const AdmisionHeader = ({
+	titulo,
+	subtitulo,
+	texto,
+	admisionForm,
+	especialidades,
+}: props) => {
 	const [init, setInit] = useState(false);
 
 	// this should be run only once per application lifetime
 	useEffect(() => {
 		initParticlesEngine(async (engine) => {
-			// you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-			// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-			// starting from v2 you can add only the features you need reducing the bundle size
-			//await loadAll(engine);
-			//await loadFull(engine);
 			await loadSlim(engine);
 			//await loadBasic(engine);
 		}).then(() => {
@@ -31,11 +37,7 @@ const AdmisionHeader = ({ titulo, subtitulo, texto }: props) => {
 	}, []);
 
 	const particlesLoaded = (container?: Container) => {
-		console.log(container);
 		return new Promise<void>((resolve) => {
-			// Tu lógica aquí
-
-			// Cuando hayas completado la lógica, resuelve la promesa
 			resolve();
 		});
 	};
@@ -55,7 +57,7 @@ const AdmisionHeader = ({ titulo, subtitulo, texto }: props) => {
 						mode: 'push',
 					},
 					onHover: {
-						enable: true,
+						enable: false,
 						mode: 'repulse',
 					},
 				},
@@ -137,12 +139,10 @@ const AdmisionHeader = ({ titulo, subtitulo, texto }: props) => {
 						</div>
 					</section>
 					<section className='AdmisionHeader__container__form'>
-						<Image
-							src='/images/form.png'
-							height='1000'
-							width='1000'
-							alt='sa'
-						></Image>
+						<AdmisionForm
+							admisionForm={admisionForm}
+							especialidades={especialidades}
+						/>
 					</section>
 				</div>
 			</header>
