@@ -2,7 +2,6 @@
 
 import { Jost } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
-import Footer from '../ui/Footer';
 
 const primary = Jost({
 	subsets: ['latin'],

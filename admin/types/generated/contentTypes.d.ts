@@ -852,6 +852,41 @@ export interface ApiEnviromentEnviroment extends Schema.SingleType {
   };
 }
 
+<<<<<<< HEAD
+=======
+export interface ApiEspecialidadEspecialidad extends Schema.CollectionType {
+  collectionName: 'especialidades';
+  info: {
+    singularName: 'especialidad';
+    pluralName: 'especialidades';
+    displayName: 'Especialidades';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String;
+    descripcion: Attribute.Text;
+    logo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::especialidad.especialidad',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::especialidad.especialidad',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+>>>>>>> d7881eca893fb7f0621128d67b982f19cc5cc76a
 export interface ApiGeneralGeneral extends Schema.SingleType {
   collectionName: 'generals';
   info: {
@@ -884,6 +919,42 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
   };
 }
 
+<<<<<<< HEAD
+=======
+export interface ApiUserRegisterUserRegister extends Schema.CollectionType {
+  collectionName: 'users_register';
+  info: {
+    singularName: 'user-register';
+    pluralName: 'users-register';
+    displayName: 'Usuarios Registrados';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nombres: Attribute.String;
+    apellidos: Attribute.String;
+    carrera_interes: Attribute.String;
+    celular: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::user-register.user-register',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::user-register.user-register',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+>>>>>>> d7881eca893fb7f0621128d67b982f19cc5cc76a
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -904,7 +975,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::admision.admision': ApiAdmisionAdmision;
       'api::enviroment.enviroment': ApiEnviromentEnviroment;
+<<<<<<< HEAD
       'api::general.general': ApiGeneralGeneral;
+=======
+      'api::especialidad.especialidad': ApiEspecialidadEspecialidad;
+      'api::general.general': ApiGeneralGeneral;
+      'api::user-register.user-register': ApiUserRegisterUserRegister;
+>>>>>>> d7881eca893fb7f0621128d67b982f19cc5cc76a
     }
   }
 }

@@ -12,8 +12,12 @@
 
 html {
   font-size: 62.5%;
+  
 }
 
+*{
+  @apply font-primary;
+}
 body {
   @apply bg-[#060922];
   font-size: 1.5rem ;
@@ -33,7 +37,7 @@ textarea {
 textarea,
 select,
 input {
-  @apply border-none bg-none;
+  @apply bg-none;
   &:focus {
     outline: none;
   }

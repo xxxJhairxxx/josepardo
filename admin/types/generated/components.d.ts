@@ -83,6 +83,9 @@ export interface AdmisionAdmisionForm extends Schema.Component {
     apellido: Attribute.Component<'admision.input-admision'>;
     carrera: Attribute.Component<'admision.input-admision'>;
     celular: Attribute.Component<'admision.input-admision'>;
+    messages: Attribute.JSON;
+    titulo: Attribute.String;
+    subtitulo: Attribute.String;
   };
 }
 

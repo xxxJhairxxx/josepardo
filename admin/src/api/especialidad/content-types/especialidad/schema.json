@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "especialidades",
+  "info": {
+    "singularName": "especialidad",
+    "pluralName": "especialidades",
+    "displayName": "Especialidades"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

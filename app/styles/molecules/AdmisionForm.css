@@ -1,0 +1,47 @@
+/** @format */
+
+.AdmisionForm {
+	@apply bg-blue-800/25 rounded-3xl;
+	width: calc(44rem * var(--scale));
+	padding: calc(3rem * var(--scale)) calc(4rem * var(--scale));
+	&__text {
+		@apply font-[600];
+		font-size: calc(4rem * var(--scale));
+	}
+	&__form {
+		@apply flex flex-col;
+		margin-block: calc(2rem * var(--scale));
+		gap: calc(3rem * var(--scale));
+		&-input {
+			input {
+				font-size: calc(1.7rem * var(--scale));
+				@apply w-full p-5 text-black;
+				height: calc(4rem * var(--scale));
+				border-radius: calc(0.6rem * var(--scale));
+			}
+			select {
+				@apply text-black;
+				font-size: calc(1.7rem * var(--scale));
+				option:first-child {
+					@apply text-gray-500;
+				}
+			}
+			button {
+				@apply bg-secondary font-semibold text-black w-full !z-40;
+				padding-block: calc(1.2rem * var(--scale));
+				border-radius: calc(1rem * var(--scale));
+				font-size: calc(1.7rem * var(--scale));
+			}
+		}
+		&-select {
+			@apply w-full px-5 cursor-pointer;
+			height: calc(4rem * var(--scale));
+			border-radius: calc(0.6rem * var(--scale));
+
+		}
+	}
+
+	&__messages {
+		font-size: calc(1.85rem * var(--scale));
+	}
+}

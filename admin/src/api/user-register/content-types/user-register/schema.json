@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_register",
+  "info": {
+    "singularName": "user-register",
+    "pluralName": "users-register",
+    "displayName": "Usuarios Registrados"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombres": {
+      "type": "string"
+    },
+    "apellidos": {
+      "type": "string"
+    },
+    "carrera_interes": {
+      "type": "string"
+    },
+    "celular": {
+      "type": "string"
+    }
+  }
+}

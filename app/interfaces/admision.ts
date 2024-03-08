@@ -12,7 +12,7 @@ export interface AdmisionData {
 	updatedAt: string;
 	publishedAt: string;
 	AdmisionBanner: AdmisionBanner;
-	AdmisionForm: AdmisionForm;
+	AdmisionForm: AdmisionFormp;
 	AdmisionEspecialidades: AdmisionEspecialidades;
 	AdmisionEstudiaconnostros: AdmisionEstudiaconnostros;
 	AdmimisionDestacados: AdmimisionDestacados;
@@ -28,13 +28,29 @@ interface AdmisionBanner {
 	subtitulo: string;
 	texto: string;
 }
-interface AdmisionForm {
+export interface AdmisionFormp {
 	id: number;
 	nombre: InputForm;
 	apellido: InputForm;
 	carrera: InputForm;
 	celular: InputForm;
+	messages: Messages;
+	titulo:string;
+	subtitulo:string;
 }
+
+export interface Messages {
+	invalid_tel: string;
+	invalid_name: string;
+	invalid_lastname: string;
+	mail_sent_ok: string;
+	invalid_email: string;
+	invalid_number: string;
+	invalid_required: string;
+	validation_error: string;
+	invalid_recaptcha: string;
+}
+
 interface AdmisionEspecialidades {
 	id: number;
 	titulo: string;
