@@ -852,6 +852,8 @@ export interface ApiEnviromentEnviroment extends Schema.SingleType {
   };
 }
 
+<<<<<<< HEAD
+=======
 export interface ApiEspecialidadEspecialidad extends Schema.CollectionType {
   collectionName: 'especialidades';
   info: {
@@ -884,6 +886,7 @@ export interface ApiEspecialidadEspecialidad extends Schema.CollectionType {
   };
 }
 
+>>>>>>> d7881eca893fb7f0621128d67b982f19cc5cc76a
 export interface ApiGeneralGeneral extends Schema.SingleType {
   collectionName: 'generals';
   info: {
@@ -916,6 +919,8 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
   };
 }
 
+<<<<<<< HEAD
+=======
 export interface ApiUserRegisterUserRegister extends Schema.CollectionType {
   collectionName: 'users_register';
   info: {
@@ -949,6 +954,7 @@ export interface ApiUserRegisterUserRegister extends Schema.CollectionType {
   };
 }
 
+>>>>>>> d7881eca893fb7f0621128d67b982f19cc5cc76a
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -969,9 +975,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::admision.admision': ApiAdmisionAdmision;
       'api::enviroment.enviroment': ApiEnviromentEnviroment;
+<<<<<<< HEAD
+      'api::general.general': ApiGeneralGeneral;
+=======
       'api::especialidad.especialidad': ApiEspecialidadEspecialidad;
       'api::general.general': ApiGeneralGeneral;
       'api::user-register.user-register': ApiUserRegisterUserRegister;
+>>>>>>> d7881eca893fb7f0621128d67b982f19cc5cc76a
     }
   }
 }

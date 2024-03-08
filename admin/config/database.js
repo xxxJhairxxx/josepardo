@@ -6,7 +6,7 @@ module.exports = ({ env }) => ({
       port: env.int('DATABASE_PORT', 3306),
       database: env('DATABASE_NAME', 'jpardodb'),
       user: env('DATABASE_USERNAME', 'root'),
-      password: env('DATABASE_PASSWORD', 'Password123'),
+      password: env('DATABASE_PASSWORD', 'jp4Rd023@nu@l'),
       ssl: env.bool('DATABASE_SSL', false),
     },
   },
