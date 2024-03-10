@@ -1,8 +1,8 @@
 /** @format */
 
 .AdmisionHeader {
-	@apply w-full h-[100vh] relative text-white;
-
+	@apply w-full h-[100vh] bg-black relative text-white;
+	
 	&:after {
 		content: '';
 		display: block;
@@ -17,61 +17,92 @@
 		opacity: 0.2;
 	}
 
-	&:before {
-		content: '';
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: -1px;
-		width: 100%;
-		height: 100%;
-		clip-path: polygon(50% 100%, 100% 0%, 100% 100%, 0 100%);
-		background: rgba(72, 32, 167, 0.5);
-		transition: all 0.25s ease-in-out 0s;
-		z-index: 2;
+	@screen laptop {
+
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+			width: 100%;
+			height: 100%;
+			clip-path: polygon(50% 100%, 100% 0%, 100% 100%, 0 100%);
+			background: rgba(72, 32, 167, 0.5);
+			transition: all 0.25s ease-in-out 0s;
+			z-index: 2;
+		}
 	}
 
 	&__container {
-		@apply h-full bg-transparent flex items-center  justify-between relative z-10;
+		@apply h-[100vh]  mx-auto flex flex-col items-center pt-[26vh] relative z-10;
+
+		@screen laptop {
+			@apply bg-transparent flex-row items-center pt-0  justify-between;
+			
+			column-gap: calc(10rem * var(--scale));
+		}
 		&__text {
 			&-socials {
-				@apply inline-flex;
-				font-size: calc(2rem * var(--scale));
-				column-gap: calc(3rem * var(--scale));
+				@apply flex gap-x-9  my-5 justify-center ;
+				@screen laptop {
+					@apply inline-flex mx-0;
+					font-size: calc(2rem * var(--scale));
+					column-gap: calc(3rem * var(--scale));
+				}
 			}
 
 			&-title {
+				@apply text-center;
+				@screen laptop {
+					@apply text-start;
+				}
+
 				h2 {
-					@apply text-secondary font-[500];
-					font-size: calc(2rem * var(--scale));
-					margin-block: calc(1rem * var(--scale));
+					@apply text-secondary text-[1.4rem] font-[500];
 					&:after,
 					&:before {
+						@apply text-[1.6rem] mx-2;
 						font-family: Arial, Helvetica, sans-serif;
-						font-size: calc(2.5rem * var(--scale));
-						margin-inline: calc(0.5rem * var(--scale));
 						content: '•';
+					}
+					@screen laptop {
+						font-size: calc(2rem * var(--scale));
+						margin-block: calc(1rem * var(--scale));
+						&:after,
+						&:before {
+							font-size: calc(2.5rem * var(--scale));
+							margin-inline: calc(0.5rem * var(--scale));
+						}
 					}
 				}
 				h1 {
-					@apply font-bold font-primary;
-					font-size: calc(6rem * var(--scale));
-					width: calc(65rem * var(--scale));
+					@apply font-bold font-primary text-[3.2rem] my-3;
+					@screen laptop {
+						font-size: calc(6rem * var(--scale));
+						width: calc(65rem * var(--scale));
+					}
 				}
 				p {
-					
-					margin-block: calc(1rem * var(--scale));
-					width: calc(55rem * var(--scale));
-					font-size: calc(1.9rem * var(--scale));
-					opacity: 0.75;
+					@apply my-2;
+					@screen laptop {
+						margin-block: calc(1rem * var(--scale));
+						width: calc(55rem * var(--scale));
+						font-size: calc(1.9rem * var(--scale));
+						opacity: 0.75;
+					}
 				}
 			}
 		}
-		&__formcontent{
-			@apply h-fit ;
-			margin-top: calc(11rem * var(--scale));
-			margin-right: calc(12rem * var(--scale));
+		&__formcontent {
+			@apply h-5 pt-[30vh] w-full;
+			@screen laptop {
+				@apply h-fit pt-0;
+				margin-top: calc(8rem * var(--scale));
+				margin-right: calc(12rem * var(--scale));
+			}
 		}
 	}
 }

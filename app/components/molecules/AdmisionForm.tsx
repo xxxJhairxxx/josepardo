@@ -67,21 +67,20 @@ const AdmisionForm = ({
 				)
 				.then((response) => {
 					console.log(response);
-					 if (response.status === 200) {
+					if (response.status === 200) {
 						setSuccessForm(true);
 						if (captchaRef.current) {
 							captchaRef.current.reset();
 						}
-						setCarreraValue("");
-						setCelularValue("");
-						setApellidoValue("");
-						setNombreValue("");
-						setTimeout(()=>setSuccessForm(false),5000)
-					 }
+						setCarreraValue('');
+						setCelularValue('');
+						setApellidoValue('');
+						setNombreValue('');
+						setTimeout(() => setSuccessForm(false), 5000);
+					}
 				});
 		} catch (error) {
 			console.log(error);
-			
 		}
 	};
 
@@ -112,21 +111,18 @@ const AdmisionForm = ({
 					</div>
 				</div>
 				<div className='AdmisionForm__form-input'>
-					{
-						<select
-							name='carrera'
-							className='AdmisionForm__form-select'
-							value={carreraValue}
-							onChange={(e: any) => setCarreraValue(e.target.value)}
-						>
-							<option>{carrera.label}</option>
-							{especialidades.map(({ id, titulo }) => (
-								<option key={id} value={titulo}>
-									{titulo}
-								</option>
-							))}
-						</select>
-					}
+					<select
+						name='carrera'
+						value={carreraValue}
+						onChange={(e: any) => setCarreraValue(e.target.value)}
+					>
+						<option>{carrera.label}</option>
+						{especialidades.map(({ id, titulo }) => (
+							<option key={id} value={titulo}>
+								{titulo}
+							</option>
+						))}
+					</select>
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<input

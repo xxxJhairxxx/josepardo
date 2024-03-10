@@ -5,10 +5,11 @@ import AdmisionNavbar from '../ui/AdmisionNavbar';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Container } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { AdmisionFormp } from '@/interfaces/admision';
 import AdmisionForm from '../molecules/AdmisionForm';
 import { EspecialidadesData } from '@/interfaces';
+import { Container as Containerp } from '../globals';
 interface props {
 	titulo: string;
 	subtitulo: string;
@@ -46,14 +47,14 @@ const AdmisionHeader = ({
 		() => ({
 			background: {
 				color: {
-					value: '#000',
+					value: '#060922',
 				},
 			},
 			fpsLimit: 160,
 			interactivity: {
 				events: {
 					onClick: {
-						enable: true,
+						enable: false,
 						mode: 'push',
 					},
 					onHover: {
@@ -73,12 +74,12 @@ const AdmisionHeader = ({
 			},
 			particles: {
 				color: {
-					value: '#ffffff',
+					value: '#09aff4',
 				},
 				links: {
 					color: '#ffffff',
 					distance: 150,
-					enable: true,
+					enable: false,
 					opacity: 0.5,
 					width: 1,
 				},
@@ -113,18 +114,33 @@ const AdmisionHeader = ({
 		[]
 	);
 
+	const textSplit = (text: string, Tag: keyof JSX.IntrinsicElements = 'h1') => {
+		if (text.includes('/')) {
+			return (
+				<Tag>
+					{text.split('/').map((splitext) => (
+						<>
+							{splitext} <br />
+						</>
+					))}
+				</Tag>
+			);
+		}
+		return <Tag>{text}</Tag>;
+	};
+
 	if (init) {
 		return (
-			<header className='AdmisionHeader'>
+			<header className='AdmisionHeader relative'>
+				<AdmisionNavbar />
 				<Particles
 					id='tsparticles'
 					particlesLoaded={particlesLoaded}
 					options={options}
-					className='!bg-transparent'
+					className=' w-full h-[40rem] absolute top-0 left-0'
 				/>
-				<AdmisionNavbar />
 
-				<div className='container-general AdmisionHeader__container'>
+				<Containerp className='AdmisionHeader__container'>
 					<section className='AdmisionHeader__container__text'>
 						<ul className='AdmisionHeader__container__text-socials'>
 							<li className='icon-facebook'></li>
@@ -134,7 +150,7 @@ const AdmisionHeader = ({
 						</ul>
 						<div className='AdmisionHeader__container__text-title'>
 							<h2>{subtitulo}</h2>
-							<h1>{titulo}</h1>
+							{textSplit(titulo, 'h1')}
 							<p>{texto}</p>
 						</div>
 					</section>
@@ -144,7 +160,7 @@ const AdmisionHeader = ({
 							especialidades={especialidades}
 						/>
 					</section>
-				</div>
+				</Containerp>
 			</header>
 		);
 	}
