@@ -1,7 +1,7 @@
 /** @format */
 
 .AdmisionForm {
-	@apply  bg-[#0C1745] rounded-xl w-[94%] mx-auto px-10 py-10;
+	@apply  bg-[#0C1745] rounded-xl w-[100%] mx-auto px-10 py-10;
 	&__text {
 		@apply font-[600] text-[2.5rem];
 	}
