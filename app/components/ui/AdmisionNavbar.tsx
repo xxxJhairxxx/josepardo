@@ -1,9 +1,5 @@
-/** @format */
-
-import React, { useEffect, useState } from 'react';
 import { Logo } from '../atoms/Logo';
 import { Container } from '../globals';
-import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useGenerals } from '@/context/generals.context';
 
 const AdmisionNavbar = () => {

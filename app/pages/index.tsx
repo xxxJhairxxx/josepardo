@@ -1,6 +1,7 @@
 /** @format */
 
 import AdmisionHeader from '@/components/organisms/AdmisionHeader';
+import Sseccionsa from '@/components/organisms/SSeccion';
 import { Especialidades, EspecialidadesData } from '@/interfaces';
 import { Admision, AdmisionData } from '@/interfaces/admision';
 import { baseApi } from '@/lib/baseApi';
@@ -23,6 +24,7 @@ export default function Index({ admision ,especialidades}: AdminionProps) {
 				admisionForm={admision.AdmisionForm}
 				especialidades={especialidades}
 			/>
+			<Sseccionsa></Sseccionsa>
 		</>
 	);
 }

@@ -1,47 +1,63 @@
 /** @format */
 
 .AdmisionForm {
-	@apply bg-blue-800/25 rounded-3xl;
-	width: calc(44rem * var(--scale));
-	padding: calc(3rem * var(--scale)) calc(4rem * var(--scale));
+	@apply  bg-[#0C1745] rounded-xl w-[94%] mx-auto px-10 py-10;
 	&__text {
-		@apply font-[600];
-		font-size: calc(4rem * var(--scale));
+		@apply font-[600] text-[2.5rem];
 	}
 	&__form {
-		@apply flex flex-col;
-		margin-block: calc(2rem * var(--scale));
-		gap: calc(3rem * var(--scale));
+		@apply flex flex-col gap-8 my-8;
 		&-input {
 			input {
-				font-size: calc(1.7rem * var(--scale));
-				@apply w-full p-5 text-black;
-				height: calc(4rem * var(--scale));
-				border-radius: calc(0.6rem * var(--scale));
+				@apply w-full p-5 text-black h-[4.5rem] text-[1.6rem] rounded-xl;
 			}
+
 			select {
-				@apply text-black;
-				font-size: calc(1.7rem * var(--scale));
+				@apply w-full px-5 h-[4.5rem] rounded-xl cursor-pointer text-black text-[1.6rem];
+
 				option:first-child {
 					@apply text-gray-500;
 				}
 			}
 			button {
-				@apply bg-secondary font-semibold text-black w-full !z-40;
-				padding-block: calc(1.2rem * var(--scale));
-				border-radius: calc(1rem * var(--scale));
-				font-size: calc(1.7rem * var(--scale));
+				@apply bg-secondary font-semibold py-5 rounded-xl text-black text-[1.6rem] w-full !z-40;
 			}
 		}
-		&-select {
-			@apply w-full px-5 cursor-pointer;
-			height: calc(4rem * var(--scale));
-			border-radius: calc(0.6rem * var(--scale));
-
-		}
 	}
+	@screen laptop {
+		@apply  bg-blue-800/25;
+		width: calc(44rem * var(--scale));
+		padding: calc(3rem * var(--scale)) calc(4rem * var(--scale));
+		&__text {
+			font-size: calc(4rem * var(--scale));
+		}
+		&__form {
+			margin-block: calc(2rem * var(--scale));
+			gap: calc(3rem * var(--scale));
+			&-input {
+				input {
+					font-size: calc(1.7rem * var(--scale));
+					height: calc(4rem * var(--scale));
+					border-radius: calc(0.6rem * var(--scale));
+				}
+				select {
+					font-size: calc(1.7rem * var(--scale));
+				}
+				button {
+					padding-block: calc(1.2rem * var(--scale));
+					border-radius: calc(1rem * var(--scale));
+					font-size: calc(1.7rem * var(--scale));
+				}
+			}
+			&-select {
+				@apply w-full px-5 cursor-pointer;
+				height: calc(4rem * var(--scale));
+				border-radius: calc(0.6rem * var(--scale));
+			}
+		}
 
-	&__messages {
-		font-size: calc(1.85rem * var(--scale));
+		&__messages {
+			font-size: calc(1.85rem * var(--scale));
+		}
 	}
 }
