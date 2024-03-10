@@ -89,13 +89,13 @@ const AdmisionForm = ({
 		<div className='AdmisionForm'>
 			<h2 className='AdmisionForm__text'>{titulo}</h2>
 			<p className=''>{subtitulo}</p>
-			<form className='AdmisionForm__form'>
+			<form className='AdmisionForm__form '>
 				<div className='AdmisionForm__form-input'>
 					<input
 						className={`contactForm-form-input-input}`}
 						placeholder={nombre.label}
 						value={nombreValue}
-						name='nombre'
+						name='name'
 						onChange={(e: any) => setNombreValue(e.target.value)}
 					/>
 				</div>
@@ -103,7 +103,7 @@ const AdmisionForm = ({
 					<input
 						className={`contactForm-form-input-input text-black `}
 						placeholder={apellido.label}
-						name='apellido'
+						name='lastname'
 						value={apellidoValue}
 						onChange={(e: any) => setApellidoValue(e.target.value)}
 					/>
@@ -131,17 +131,18 @@ const AdmisionForm = ({
 				<div className='AdmisionForm__form-input'>
 					<input
 						value={celularValue}
-						name='celular'
+						name='phone'
 						onChange={(e: any) => setCelularValue(e.target.value)}
 						placeholder={celular.label}
 					/>
 				</div>
 
-				<div className='AdmisionForm__form-recaptcha relative'>
+				<div className='AdmisionForm__form-recaptcha p-0 '>
 					<ReCAPTCHA
 						sitekey={captchaKey}
 						onChange={onChangeRecaptcha}
 						ref={captchaRef}
+						className='  mx-0  ml-[-2rem] scale-[.85] '
 					/>
 
 					{showCaptchaError && (

@@ -33,7 +33,7 @@
 	}
 
 	&__container {
-		@apply h-full bg-transparent flex items-center justify-between relative z-10;
+		@apply h-full bg-transparent flex items-center  justify-between relative z-10;
 		&__text {
 			&-socials {
 				@apply inline-flex;
@@ -68,8 +68,10 @@
 				}
 			}
 		}
-		&__form{
-			@apply h-fit mt-[11rem]  mr-24	w-[50rem];
+		&__formcontent{
+			@apply h-fit ;
+			margin-top: calc(11rem * var(--scale));
+			margin-right: calc(12rem * var(--scale));
 		}
 	}
 }
