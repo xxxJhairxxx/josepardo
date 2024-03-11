@@ -1,0 +1,19 @@
+.alert_confirm {
+    @apply fixed w-fit  scale-x-0 opacity-0 overflow-hidden top-[10rem] right-[2rem] z-[1000] bg-green-100  text-[#35B278] pl-[1.5rem] pr-[1.5rem] py-5 rounded-xl;
+    transition-duration: 0.4s;
+    transform-origin: right;
+ 
+    &:before {
+       content: "✔";
+       @apply mr-3;
+    }
+ 
+    @screen laptop {
+       @apply fixed top-[15rem] right-[10rem] text-[1.8rem] pl-[2rem] pr-[2rem] py-10 rounded-xl;
+    }
+ }
+ 
+ .alert_transiton {
+    @apply opacity-100 scale-x-100;
+ }
+ 

@@ -1,42 +1,36 @@
 /** @format */
 
 .AdminNavbar {
-
 	@apply absolute bg-white h-[6rem] flex items-center z-50 w-full;
 	&__container {
 		@apply h-full flex  items-center;
 
 		&__info {
-			@apply hidden;
+			@apply hidden text-[1.6rem];
 
 			gap: calc(4rem * var(--scale));
 
-			& > li {
-				font-size: calc(1.6rem * var(--scale));
-        i{
-          margin-right: calc(0.5rem * var(--scale));
-        }
+			i {
+				margin-right: calc(0.5rem * var(--scale));
 			}
 		}
 	}
-	
+
 	@screen laptop {
-	@apply  bg-transparent z-50 w-full;
-	height: calc(14rem * var(--scale));
-	&__container {
-		@apply h-full flex  items-center;
+		@apply bg-transparent z-50 w-full;
+		height: calc(14rem * var(--scale));
+		&__container {
+			@apply h-full flex  items-center;
 
-		&__info {
-			@apply inline-flex  ml-auto;
-
-			gap: calc(4rem * var(--scale));
-
-			& > li {
+			&__info {
+				@apply inline-flex  ml-auto;
 				font-size: calc(1.6rem * var(--scale));
-        i{
-          margin-right: calc(0.5rem * var(--scale));
-        }
+				gap: calc(4rem * var(--scale));
+
+				i {
+					margin-right: calc(0.5rem * var(--scale));
+				}
 			}
 		}
 	}
-}}
+}

@@ -1,6 +1,5 @@
 /** @format */
 
-import Image from 'next/image';
 import AdmisionNavbar from '../ui/AdmisionNavbar';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { Container } from '@tsparticles/engine';
@@ -10,6 +9,7 @@ import { AdmisionFormp } from '@/interfaces/admision';
 import AdmisionForm from '../molecules/AdmisionForm';
 import { EspecialidadesData } from '@/interfaces';
 import { Container as Containerp } from '../globals';
+import { useGenerals } from '@/context/generals.context';
 interface props {
 	titulo: string;
 	subtitulo: string;
@@ -27,11 +27,11 @@ const AdmisionHeader = ({
 }: props) => {
 	const [init, setInit] = useState(false);
 
-	// this should be run only once per application lifetime
+	const { general } = useGenerals();
+
 	useEffect(() => {
 		initParticlesEngine(async (engine) => {
 			await loadSlim(engine);
-			//await loadBasic(engine);
 		}).then(() => {
 			setInit(true);
 		});
@@ -118,10 +118,10 @@ const AdmisionHeader = ({
 		if (text.includes('/')) {
 			return (
 				<Tag>
-					{text.split('/').map((splitext) => (
-						<>
+					{text.split('/').map((splitext, index) => (
+						<span key={index}>
 							{splitext} <br />
-						</>
+						</span>
 					))}
 				</Tag>
 			);
@@ -142,12 +142,11 @@ const AdmisionHeader = ({
 
 				<Containerp className='AdmisionHeader__container'>
 					<section className='AdmisionHeader__container__text'>
-						<ul className='AdmisionHeader__container__text-socials'>
-							<li className='icon-facebook'></li>
-							<li className='icon-instagram'></li>
-							<li className='icon-youtube'></li>
-							<li className='icon-twitter'></li>
-						</ul>
+						<div className='AdmisionHeader__container__text-socials'>
+							{general.informacion.redes_sociales.map(({tipo,url}) => (
+								<a href={url} title={!url ? "muy pronto": tipo} className={`icon-${tipo}`} />
+							))}
+						</div>
 						<div className='AdmisionHeader__container__text-title'>
 							<h2>{subtitulo}</h2>
 							{textSplit(titulo, 'h1')}

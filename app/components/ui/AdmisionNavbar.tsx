@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Logo } from '../atoms/Logo';
 import { Container } from '../globals';
 import { useGenerals } from '@/context/generals.context';
@@ -9,31 +10,31 @@ const AdmisionNavbar = () => {
 	
 
 	return (
-		<nav className='AdminNavbar'>
+		<header className='AdminNavbar'>
 			
 			<Container className='AdminNavbar__container'>
 				<Logo />
 
-				<ul className='AdminNavbar__container__info'>
-					<li>
+				<nav className='AdminNavbar__container__info'>
+					<Link href='https://maps.app.goo.gl/CTQGbct4D4Zjcaue9' target='_blank' >
 						<i className='icon-location' />
 						{informacion.direccion}
-					</li>
-					<li>
+					</Link>
+					<Link href={`mailto:${informacion.correo}`} rel="noreferrer">
 						<i className='icon-email' />
 						{informacion.correo}
-					</li>
-					<li>
+					</Link>
+					<Link href={`tel:${informacion.telefono}`} rel="noreferrer">
 						<i className='icon-phone' />
 						{informacion.telefono}
-					</li>
-					<li>
+					</Link>
+					<p>
 						<i className='icon-schedule' />
 						{informacion.horario}
-					</li>
-				</ul>
+					</p>
+				</nav>
 			</Container>
-		</nav>
+		</header>
 	);
 };
 

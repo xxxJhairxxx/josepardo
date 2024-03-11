@@ -170,6 +170,14 @@ export interface CardEspecialidadCardEspecialidad extends Schema.Component {
   attributes: {};
 }
 
+export interface ErrorMessagesMensajesDeError extends Schema.Component {
+  collectionName: 'components_error_messages_mensajes_de_errors';
+  info: {
+    displayName: 'Mensajes de Error';
+  };
+  attributes: {};
+}
+
 export interface InformacionInformacion extends Schema.Component {
   collectionName: 'components_informacion_informacions';
   info: {
@@ -228,6 +236,7 @@ declare module '@strapi/types' {
       'admision.input-admision': AdmisionInputAdmision;
       'admision.razones': AdmisionRazones;
       'card-especialidad.card-especialidad': CardEspecialidadCardEspecialidad;
+      'error-messages.mensajes-de-error': ErrorMessagesMensajesDeError;
       'informacion.informacion': InformacionInformacion;
       'labels.labels': LabelsLabels;
       'social-networks.redes-sociales': SocialNetworksRedesSociales;

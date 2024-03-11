@@ -23,6 +23,12 @@
       "type": "component",
       "repeatable": false,
       "component": "informacion.informacion"
+    },
+    "Mensajes_Error": {
+      "displayName": "Mensajes de Error",
+      "type": "component",
+      "repeatable": false,
+      "component": "error-messages.mensajes-de-error"
     }
   }
 }

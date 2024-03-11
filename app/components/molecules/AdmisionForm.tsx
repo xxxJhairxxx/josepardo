@@ -42,7 +42,7 @@ const AdmisionForm = ({
 
 	const onChangeRecaptcha = (response: any) => {
 		setCaptchaResponse(response);
-		setShowCaptchaError(false); // Resetea el estado de error del reCAPTCHA
+		setShowCaptchaError(false);
 	};
 
 	const onSubmit = async (data: any) => {
@@ -106,9 +106,6 @@ const AdmisionForm = ({
 						value={apellidoValue}
 						onChange={(e: any) => setApellidoValue(e.target.value)}
 					/>
-					<div>
-						<p></p>
-					</div>
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<select
@@ -143,7 +140,7 @@ const AdmisionForm = ({
 
 					{showCaptchaError && (
 						<div className={`error-captcha`}>
-							<span className='text-red-500'>{''}</span>
+							<span className='text-red-500'>{'precione el catpcha'}</span>
 						</div>
 					)}
 				</div>
