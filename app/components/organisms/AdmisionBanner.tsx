@@ -143,8 +143,8 @@ const AdmisionHeader = ({
 				<Containerp className='AdmisionHeader__container'>
 					<section className='AdmisionHeader__container__text'>
 						<div className='AdmisionHeader__container__text-socials'>
-							{general.informacion.redes_sociales.map(({tipo,url}) => (
-								<a href={url} title={!url ? "muy pronto": tipo} className={`icon-${tipo}`} />
+							{general.informacion.redes_sociales.map(({id,tipo,url}) => (
+								<a key={id} href={url} title={!url ? "muy pronto": tipo} className={`icon-${tipo}`} />
 							))}
 						</div>
 						<div className='AdmisionHeader__container__text-title'>
