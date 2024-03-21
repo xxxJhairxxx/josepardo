@@ -104,7 +104,7 @@
 			padding-top: calc(50vh);
 			@screen laptop {
 				@apply h-fit pt-0;
-				margin-top: calc(8rem * var(--scale));
+				margin-top: calc(15rem * var(--scale));
 				margin-right: calc(12rem * var(--scale));
 			}
 		}

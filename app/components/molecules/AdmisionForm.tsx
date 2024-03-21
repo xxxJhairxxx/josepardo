@@ -3,12 +3,11 @@
 import ReCAPTCHA, { ReCAPTCHA as ReCAPTCHAType } from 'react-google-recaptcha';
 import { useGenerals } from '@/context/generals.context';
 import { AdmisionFormp } from '@/interfaces/admision';
-import { namePattern } from '@/lib/formUtils';
 import axios from 'axios';
 import React, { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { Loader } from '../atoms/Loader';
 import { EspecialidadesData } from '@/interfaces';
+import Alert from '../atoms/Alert';
 
 interface props {
 	admisionForm: AdmisionFormp;
@@ -30,28 +29,53 @@ const AdmisionForm = ({
 	const [loading, setLoading] = useState(false);
 	const [successForm, setSuccessForm] = useState<boolean>(false);
 	const [captchaResponse, setCaptchaResponse] = useState('');
-	const [showCaptchaError, setShowCaptchaError] = useState(false);
+	const [ShowCaptchaError, setShowCaptchaError] = useState(false);
 	const captchaRef = useRef<ReCAPTCHAType>(null);
 	const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA as string;
+
 	const [nombreValue, setNombreValue] = useState<string>('');
 	const [apellidoValue, setApellidoValue] = useState<string>('');
 	const [celularValue, setCelularValue] = useState<string>('');
 	const [carreraValue, setCarreraValue] = useState<string>('');
+	const [mensaje, setMensaje] = useState<string>('');
 
 	const { general } = useGenerals();
 
 	const onChangeRecaptcha = (response: any) => {
+
 		setCaptchaResponse(response);
-		setShowCaptchaError(false);
 	};
 
+	const showAlert = (text: string) => {
+		setMensaje(text);
+		setShowCaptchaError(true);
+		setTimeout(() => {
+			setShowCaptchaError(false);
+		}, 5000);
+	};
+
+	
 	const onSubmit = async (data: any) => {
 		try {
 			if (!captchaResponse) {
 				console.log('Por favor, completa el reCAPTCHA.');
-				setShowCaptchaError(true);
+				showAlert(messages.invalid_recaptcha);
 				return;
 			}
+			if (carreraValue === '') {
+				showAlert(messages.invalid_required);
+				return;
+			}
+			if (celularValue.length < 9 || !/^[0-9]*$/.test(celularValue)) {
+				showAlert(messages.invalid_number);
+				return;
+			}
+			if (celularValue.trim() === '') {
+				showAlert(messages.invalid_tel);
+				return;
+			}
+
+
 
 			axios
 				.post(
@@ -113,7 +137,7 @@ const AdmisionForm = ({
 						value={carreraValue}
 						onChange={(e: any) => setCarreraValue(e.target.value)}
 					>
-						<option>{carrera.label}</option>
+						<option value=''>{carrera.label}</option>
 						{especialidades.map(({ id, titulo }) => (
 							<option key={id} value={titulo}>
 								{titulo}
@@ -125,8 +149,13 @@ const AdmisionForm = ({
 					<input
 						value={celularValue}
 						name='phone'
-						onChange={(e: any) => setCelularValue(e.target.value)}
+						onChange={(e: any) => {
+							if (e.target.value.length <= 9 && /^[0-9]*$/.test(e.target.value))
+								setCelularValue(e.target.value);
+						}}
 						placeholder={celular.label}
+						required
+						maxLength={9}
 					/>
 				</div>
 
@@ -137,12 +166,6 @@ const AdmisionForm = ({
 						ref={captchaRef}
 						className='  mx-0  ml-[-2rem] scale-[.85] '
 					/>
-
-					{showCaptchaError && (
-						<div className={`error-captcha`}>
-							<span className='text-red-500'>{'precione el catpcha'}</span>
-						</div>
-					)}
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<button onClick={onSubmit} type='button'>
@@ -159,15 +182,7 @@ const AdmisionForm = ({
 					</div>
 				)}
 
-				{/* <div className='contactForm-form-contact'>
-					<p>
-						<span>{'lbl_appointment_send'}</span>{' '}
-						<a href={`tel:${general.informacion.telefono}`}>
-							<i className='icon icon-phone ' />
-							{general.informacion.telefono}
-						</a>
-					</p>
-				</div> */}
+				<Alert catchError={ShowCaptchaError} message={mensaje} />
 			</form>
 		</div>
 	);
