@@ -8,6 +8,7 @@ import React, { useRef, useState } from 'react';
 import { Loader } from '../atoms/Loader';
 import { EspecialidadesData } from '@/interfaces';
 import Alert from '../atoms/Alert';
+import { baseApi } from '@/lib/baseApi';
 
 interface props {
 	admisionForm: AdmisionFormp;
@@ -42,7 +43,6 @@ const AdmisionForm = ({
 	const { general } = useGenerals();
 
 	const onChangeRecaptcha = (response: any) => {
-
 		setCaptchaResponse(response);
 	};
 
@@ -54,7 +54,6 @@ const AdmisionForm = ({
 		}, 5000);
 	};
 
-	
 	const onSubmit = async (data: any) => {
 		try {
 			if (!captchaResponse) {
@@ -75,17 +74,15 @@ const AdmisionForm = ({
 				return;
 			}
 
-
-
 			axios
 				.post(
 					`${process.env.NEXT_PUBLIC_STRAPI_URL}/users-register?populate=deep`,
 					{
 						data: {
-							nombres: nombreValue,
-							apellidos: apellidoValue,
-							carrera_interes: carreraValue,
-							celular: celularValue,
+							name: nombreValue,
+							last_name: apellidoValue,
+							message: carreraValue,
+							phone: celularValue,
 						},
 					}
 				)
@@ -96,6 +93,7 @@ const AdmisionForm = ({
 						if (captchaRef.current) {
 							captchaRef.current.reset();
 						}
+
 						setCarreraValue('');
 						setCelularValue('');
 						setApellidoValue('');
@@ -103,6 +101,25 @@ const AdmisionForm = ({
 						setTimeout(() => setSuccessForm(false), 5000);
 					}
 				});
+
+				try {
+					const response = await baseApi.post('/ezforms/submit', {
+						formData: {
+							nombres: nombreValue,
+							apellidos: apellidoValue,
+							carrera_interes: carreraValue,
+							celular: celularValue,
+						},
+					});
+					if (response.status === 200) {
+						console.log('Correo enviado');
+					}
+				} catch (error) {
+					console.log(error);
+				}
+			
+
+			
 		} catch (error) {
 			console.log(error);
 		}

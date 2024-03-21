@@ -10,7 +10,6 @@ const schema = Joi.object({
   //     "string.pattern.base": "Invalid Phone Number",
   //   }),
   phone: Joi.string().required(),
-  email: Joi.string().required(),
   // email: Joi.string()
   //   .required()
   //   .pattern(

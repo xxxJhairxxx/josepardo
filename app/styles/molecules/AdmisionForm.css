@@ -58,6 +58,7 @@
 		}
 
 		&__messages {
+			
 			font-size: calc(1.85rem * var(--scale));
 		}
 	}
