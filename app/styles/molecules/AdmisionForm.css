@@ -33,15 +33,16 @@
 		}
 		&__form {
 			margin-block: calc(2rem * var(--scale));
-			gap: calc(3rem * var(--scale));
+			gap: calc(2rem * var(--scale));
 			&-input {
 				input {
 					font-size: calc(1.7rem * var(--scale));
-					height: calc(4rem * var(--scale));
+					height: calc(5rem * var(--scale));
 					border-radius: calc(0.6rem * var(--scale));
 				}
 				select {
 					font-size: calc(1.7rem * var(--scale));
+					height: calc(5rem * var(--scale));
 				}
 				button {
 					padding-block: calc(1.2rem * var(--scale));
