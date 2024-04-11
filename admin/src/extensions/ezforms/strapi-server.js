@@ -75,16 +75,15 @@ module.exports = (plugin) => {
 
   plugin.services.formatData = () => ({
     formatData(data) {
-      const { name, last_name, phone, email, message } = data;
+      const { name, last_name, phone, message } = data;
 
       const body = `
       <br>
-      From: ${name} ${last_name ? last_name : ""} / ${email} <br>
+      From: ${name} ${last_name ? last_name : ""} <br>
       Subject: Contact Form / Tapia Tennis Court  <br>
       <br>
       Contact Info--- <br>
       Phone: ${phone} <br>
-      Email: ${email} <br>
       ${message ? `Message: ${message} <br>` : ""}
       <br>
       --

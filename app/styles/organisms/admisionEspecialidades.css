@@ -1,0 +1,6 @@
+.admisionEspecialidades{
+    @apply mt-[65vh] py-[4rem] relative z-50;
+    p{
+        @apply text-[#d6d6d6];
+    }
+}

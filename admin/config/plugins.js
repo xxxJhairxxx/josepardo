@@ -60,8 +60,7 @@ module.exports = ({ env }) => ({
           name: 'email',
           enabled: true,
           config: {
-            from: env('SMTP_EMAIL')
-            // from: 'inf.roycd@gmail.com'
+            from: env('SMTP_EMAIL'),
           }
         }
       ]
