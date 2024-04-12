@@ -105,10 +105,10 @@ const AdmisionForm = ({
 				try {
 					const response = await baseApi.post('/ezforms/submit', {
 						formData: {
-							nombres: nombreValue,
-							apellidos: apellidoValue,
-							carrera_interes: carreraValue,
-							celular: celularValue,
+							name: nombreValue,
+							last_name: apellidoValue,
+							message: carreraValue,
+							phone: celularValue,
 						},
 					});
 					if (response.status === 200) {

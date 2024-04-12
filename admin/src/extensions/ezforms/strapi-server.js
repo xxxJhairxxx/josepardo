@@ -80,7 +80,7 @@ module.exports = (plugin) => {
       const body = `
       <br>
       From: ${name} ${last_name ? last_name : ""} <br>
-      Subject: Contact Form / Tapia Tennis Court  <br>
+      Subject: Contact Form / Jose pardo  <br>
       <br>
       Contact Info--- <br>
       Phone: ${phone} <br>
