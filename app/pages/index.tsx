@@ -27,6 +27,7 @@ export default function Index({ admision, especialidades }: AdminionProps) {
 				titulo={admision.AdmisionEspecialidades.titulo}
 				subtitulo={admision.AdmisionEspecialidades.subtitulo}
 				texto={admision.AdmisionEspecialidades.texto}
+				especialidades={especialidades}
 			/>
 		</>
 	);
@@ -37,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const [{ data: admision }, { data: carreras }] = await Promise.all([
 		baseApi.get<Admision>(`/admision?populate=deep`),
-		baseApi.get<Especialidades>(`/especialidades?fields=titulo`),
+		baseApi.get<Especialidades>(`/especialidades?populate=deep`),
 	]);
 
 	return {
