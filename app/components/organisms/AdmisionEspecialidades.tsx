@@ -15,16 +15,16 @@ interface props {
 
 const AdmisionEspecialidades = ({ titulo, subtitulo, texto ,especialidades}: props) => {
 	return (
-		<section className='admisionEspecialidades'>
-			<Container>
-				<div>
+		<section className='admisionEspecialidades '>
+			<Container className='admisionEspecialidades__container'>
+				<div className='admisionEspecialidades__container__text'>
 					<Title title={titulo} subtitle={subtitulo} />
 					<p>{texto}</p>
 				</div>
-				<div>
-					<EspecialidadCard title={especialidades[0].titulo} logo={especialidades[0].logo} text={especialidades[0].descripcion} >
-
-					</EspecialidadCard>
+				<div className='admisionEspecialidades__container__cards'>
+					{especialidades.slice(0,3).map(({id,titulo,logo,descripcion})=>(
+						<EspecialidadCard key={id} title={titulo} logo={logo} text={descripcion} />			
+					))}
 				</div>
 			</Container>
 		</section>

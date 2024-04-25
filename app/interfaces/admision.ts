@@ -66,7 +66,8 @@ interface AdmisionEstudiaconnostros {
 	Razones: Razones[];
 }
 
-interface Razones {
+export interface Razones {
+	id:number;
 	titulo: string;
 	descripcion: string;
 	logo: Picture | null;
