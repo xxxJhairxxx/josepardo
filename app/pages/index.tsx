@@ -2,6 +2,7 @@
 
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
 import AdmisionEspecialidades from '@/components/organisms/AdmisionEspecialidades';
+import AdmisionStudyUs from '@/components/organisms/AdmisionStudyUs';
 import { Especialidades, EspecialidadesData } from '@/interfaces';
 import { Admision, AdmisionData } from '@/interfaces/admision';
 import { baseApi } from '@/lib/baseApi';
@@ -23,10 +24,18 @@ export default function Index({ admision, especialidades }: AdminionProps) {
 				admisionForm={admision.AdmisionForm}
 				especialidades={especialidades}
 			/>
-			<AdmisionEspecialidades 
+			<AdmisionEspecialidades
 				titulo={admision.AdmisionEspecialidades.titulo}
 				subtitulo={admision.AdmisionEspecialidades.subtitulo}
 				texto={admision.AdmisionEspecialidades.texto}
+				especialidades={especialidades}
+			/>
+			<AdmisionStudyUs
+				titulo={admision.AdmisionEstudiaconnostros.titulo}
+				subtitulo={admision.AdmisionEstudiaconnostros.subtitulo}
+				texto={admision.AdmisionEstudiaconnostros.texto}
+				imagen={admision.AdmisionEstudiaconnostros.image}
+				razones={admision.AdmisionEstudiaconnostros.Razones}
 			/>
 		</>
 	);
@@ -37,7 +46,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const [{ data: admision }, { data: carreras }] = await Promise.all([
 		baseApi.get<Admision>(`/admision?populate=deep`),
-		baseApi.get<Especialidades>(`/especialidades?fields=titulo`),
+		baseApi.get<Especialidades>(`/especialidades?populate=deep`),
 	]);
 
 	return {
