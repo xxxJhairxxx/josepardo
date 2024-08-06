@@ -1,6 +1,6 @@
 /** @format */
 
-import { MetaSEO, Picture } from '.';
+import {Picture } from '.';
 
 export interface Especialidades {
 	data: EspecialidadesData[];
