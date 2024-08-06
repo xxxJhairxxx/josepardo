@@ -1,10 +1,13 @@
 .especialidadCard{
-    @apply border-[1px] border-secondary rounded-2xl text-white p-8 flex flex-col gap-2 ;
+    @apply border-[1px] border-secondary rounded-2xl text-white p-8 flex flex-col gap-2 relative;
 
 
     &__logo{
-        @apply w-[8rem] h-[8rem];
-        filter: brightness(0) saturate(100%) invert(72%) sepia(68%) saturate(1206%) hue-rotate(354deg) brightness(104%) contrast(101%);
+        @apply w-full h-full absolute left-0 top-0 z-[-1] opacity-15 ;
+        img{
+            @apply w-full h-full object-cover;
+        }
+        /* filter: brightness(0) saturate(100%) invert(72%) sepia(68%) saturate(1206%) hue-rotate(354deg) brightness(104%) contrast(101%); */
     }
 
     &__title{
@@ -13,7 +16,7 @@
             @apply text-[2rem] pb-3 font-semibold;
         }
         p{
-            @apply h-[7rem];
+            @apply h-[9rem];
         }
     }
 

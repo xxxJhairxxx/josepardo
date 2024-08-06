@@ -40,7 +40,7 @@
 	}
 
 	&__container {
-		@apply h-[100vh]  mx-auto flex flex-col items-center pt-[26vh] relative z-10;
+		@apply h-[100vh]  mx-auto flex flex-col items-center  pt-[22vh] relative z-10;
 
 		@screen laptop {
 			@apply bg-transparent flex-row items-center pt-0  justify-between;
@@ -100,10 +100,10 @@
 			}
 		}
 		&__formcontent {
-			@apply h-fit pb-[5rem] w-full;
+			@apply h-fit pb-[5rem] w-full hidden;
 			padding-top: calc(50vh);
 			@screen laptop {
-				@apply h-fit pt-0;
+				@apply h-fit pt-0 block;
 				margin-top: calc(15rem * var(--scale));
 				margin-right: calc(12rem * var(--scale));
 			}

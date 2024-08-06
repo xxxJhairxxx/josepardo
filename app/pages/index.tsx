@@ -2,6 +2,7 @@
 
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
 import AdmisionEspecialidades from '@/components/organisms/AdmisionEspecialidades';
+import AdmisionFormMobile from '@/components/organisms/AdmisionFormMobile';
 import AdmisionStudyUs from '@/components/organisms/AdmisionStudyUs';
 import { Especialidades, EspecialidadesData } from '@/interfaces';
 import { Admision, AdmisionData } from '@/interfaces/admision';
@@ -21,6 +22,10 @@ export default function Index({ admision, especialidades }: AdminionProps) {
 				titulo={admision.AdmisionBanner.titulo}
 				subtitulo={admision.AdmisionBanner.subtitulo}
 				texto={admision.AdmisionBanner.texto}
+				admisionForm={admision.AdmisionForm}
+				especialidades={especialidades}
+			/>
+			<AdmisionFormMobile
 				admisionForm={admision.AdmisionForm}
 				especialidades={especialidades}
 			/>

@@ -18,18 +18,19 @@ interface props {
 
 const AdmisionStudyUs = ({ titulo, subtitulo, texto, imagen, razones }: props) => {
 	return (
-		<section className='admisionStudyUs'>
-			<Container>
-                <Thumb image={imagen} ></Thumb>
-				<div className='admisionStudyUs__text'>
+		<section className='admisionStudyUs '>
+			<Container className='admisionStudyUs__container'>
+              
+				<div className='admisionStudyUs__container__text'>
 					<Title title={titulo} subtitle={subtitulo} />
 					<p>{texto}</p>
 				</div>
+				<Thumb image={imagen} className='admisionStudyUs__container__img'/>
 
 				<div className='admisionStudyUs__cards'>
-                    {razones.map(({id,titulo,descripcion,logo}) => (
+                    {/* {razones.map(({id,titulo,descripcion,logo}) => (
                         <ReasonsCard key={id} title={titulo} text={descripcion} logo={logo} />
-                    ))}
+                    ))}  */}
                 </div>
 			</Container>
 		</section>

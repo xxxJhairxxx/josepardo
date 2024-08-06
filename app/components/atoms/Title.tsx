@@ -30,7 +30,7 @@ export const Title: FC<TitleProps> = ({
 
 	return (
 		<div className='title-prin'>
-			<Subtag className='title-prin__subtitle'>{subtitle}</Subtag>
+			{subtitle && <Subtag className='title-prin__subtitle'>{subtitle}</Subtag>}
 
 			<Tag
 				className={`title-prin__title ${center && 'center'} ${hidden && 'none'} ${

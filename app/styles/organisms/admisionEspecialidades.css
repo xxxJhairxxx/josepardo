@@ -1,17 +1,22 @@
 /** @format */
 
 .admisionEspecialidades {
-	@apply mt-[100vh] py-[4rem] relative z-50;
+	@apply py-[4rem] relative z-50;
 
 	&__container {
-		@apply flex flex-col gap-5;
+		@apply flex flex-col gap-10;
 
 		&__text {
 			@apply text-[#d6d6d6];
 		}
 
 		&__cards {
-			@apply flex flex-col gap-5;
+			@apply flex flex-col gap-10;
+
+			@screen laptop{
+				@apply grid grid-cols-3 gap-20;
+			}
 		}
+		
 	}
 }

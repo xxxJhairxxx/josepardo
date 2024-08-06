@@ -1,0 +1,12 @@
+/** @format */
+
+.admisionStudyUs {
+    @apply relative z-50 text-white;
+	&__container {
+		&__text {
+		}
+        &__img{
+            @apply mb-[4rem] mt-[3rem];
+        }
+	}
+}

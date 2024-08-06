@@ -13,6 +13,7 @@ import { baseApi } from '@/lib/baseApi';
 interface props {
 	admisionForm: AdmisionFormp;
 	especialidades: EspecialidadesData[];
+	className?: string
 }
 
 const AdmisionForm = ({
@@ -26,6 +27,7 @@ const AdmisionForm = ({
 		subtitulo,
 	},
 	especialidades,
+	className
 }: props) => {
 	const [loading, setLoading] = useState(false);
 	const [successForm, setSuccessForm] = useState<boolean>(false);
@@ -126,7 +128,7 @@ const AdmisionForm = ({
 	};
 
 	return (
-		<div className='AdmisionForm'>
+		<div className={`AdmisionForm ${className}`}>
 			<h2 className='AdmisionForm__text'>{titulo}</h2>
 			<p className=''>{subtitulo}</p>
 			<form className='AdmisionForm__form '>

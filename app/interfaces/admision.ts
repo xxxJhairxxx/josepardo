@@ -62,7 +62,7 @@ interface AdmisionEstudiaconnostros {
 	titulo: string;
 	subtitulo: string;
 	texto: string;
-	image: Picture | null;
+	image: Picture;
 	Razones: Razones[];
 }
 
