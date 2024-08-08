@@ -153,6 +153,7 @@ const AdmisionHeader = ({
 							<p>{texto}</p>
 						</div>
 					</section>
+					
 					<section className='AdmisionHeader__container__formcontent '>
 						<AdmisionForm
 							admisionForm={admisionForm}

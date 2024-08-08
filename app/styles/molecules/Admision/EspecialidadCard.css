@@ -7,13 +7,12 @@
         img{
             @apply w-full h-full object-cover;
         }
-        /* filter: brightness(0) saturate(100%) invert(72%) sepia(68%) saturate(1206%) hue-rotate(354deg) brightness(104%) contrast(101%); */
     }
 
     &__title{
         @apply overflow-hidden;
         h1{
-            @apply text-[2rem] pb-3 font-semibold;
+            @apply text-[2.5rem] pb-3 font-semibold;
         }
         p{
             @apply h-[9rem];

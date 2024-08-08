@@ -12,7 +12,7 @@ const Thumb = ({image,className="",full}:ThumbProps) => {
     return (
       
             <figure className={`${full ? "thumb__full": "thumb"} ${className}`}>
-                    <Image  src={image.url} alt={image.alternativeText || ""} width={image.width} height={image.height} />
+                   {image &&<Image  src={image.url} alt={image.alternativeText || ""} width={image.width} height={image.height} />} 
             </figure>
        
      );

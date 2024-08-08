@@ -15,7 +15,7 @@ const EspecialidadCard = ({ logo, title, text }: Props) => {
 		<article className='especialidadCard'>
 			<Thumb image={logo} className='especialidadCard__logo' />
 			<section className='especialidadCard__title'>
-				<h1 >{title}</h1>
+				<h1>{title}</h1>
 				<p>{text}</p>
 			</section>
 
