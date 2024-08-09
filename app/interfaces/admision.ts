@@ -27,6 +27,7 @@ interface AdmisionBanner {
 	titulo: string;
 	subtitulo: string;
 	texto: string;
+	image:Picture;
 }
 export interface AdmisionFormp {
 	id: number;
@@ -70,7 +71,7 @@ export interface Razones {
 	id:number;
 	titulo: string;
 	descripcion: string;
-	logo: Picture | null;
+	logo: Picture;
 }
 interface AdmimisionDestacados {
 	CardDestacado: CardDestacado[];
@@ -80,7 +81,7 @@ interface CardDestacado {
 	id: number;
 	numero: string;
 	titulo: string;
-	logo: Picture | null;
+	logo: Picture ;
 }
 
 interface AdmisionGaleria {

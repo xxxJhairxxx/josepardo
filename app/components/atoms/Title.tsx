@@ -3,20 +3,22 @@
 import { FC } from 'react';
 
 interface TitleProps {
-	title: string;
-	subtitle: string;
-	classname?: string;
+	title?: string;
+	subtitle?: string;
+	className?: string;
 	center?: boolean;
 	hidden?: boolean;
+	classTitle?:string;
 	tag?: keyof JSX.IntrinsicElements;
 }
 
 export const Title: FC<TitleProps> = ({
 	title,
 	subtitle,
-	classname,
+	className,
 	center,
 	hidden,
+	classTitle='',
 	tag: Tag = 'h2',
 }) => {
 	const ogText = title
@@ -29,13 +31,11 @@ export const Title: FC<TitleProps> = ({
 	const Subtag: keyof JSX.IntrinsicElements = Tag === 'h1' ? 'h2' : 'h3';
 
 	return (
-		<div className='title-prin'>
+		<div className={`${className} ${center && 'text-center'} title-prin`}>
 			{subtitle && <Subtag className='title-prin__subtitle'>{subtitle}</Subtag>}
 
 			<Tag
-				className={`title-prin__title ${center && 'center'} ${hidden && 'none'} ${
-					classname || ''
-				}`}
+				className={`title-prin__title  ${hidden && 'none'} ${classTitle}`}
 			>
 				{hasSlash ? (
 					<span>

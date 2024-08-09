@@ -7,6 +7,7 @@ import { Container } from '../globals';
 import { Razones } from '@/interfaces/admision';
 import Thumb from '../atoms/Thumb';
 import ReasonsCard from '../molecules/Admision/ReasonsCard';
+import ReactMarkdown from 'react-markdown';
 
 interface props {
 	titulo: string;
@@ -16,25 +17,41 @@ interface props {
 	razones: Razones[];
 }
 
-const AdmisionStudyUs = ({ titulo, subtitulo, texto, imagen, razones }: props) => {
+const admisionStudyUsCtn = ({ titulo, subtitulo, texto, imagen, razones }: props) => {
 	return (
 		<section className='admisionStudyUs '>
 			<Container className='admisionStudyUs__container'>
-              
+
 				<div className='admisionStudyUs__container__text'>
 					<Title title={titulo} subtitle={subtitulo} />
-					<p>{texto}</p>
+					<ReactMarkdown>{texto}</ReactMarkdown>
 				</div>
-				<Thumb image={imagen} className='admisionStudyUs__container__img'/>
+				<Thumb image={imagen} className='admisionStudyUs__container__img' />
 
-				<div className='admisionStudyUs__cards'>
-                    {/* {razones.map(({id,titulo,descripcion,logo}) => (
+				{/* <div className='admisionStudyUsCtn__cards'>
+                    {razones.map(({id,titulo,descripcion,logo}) => (
                         <ReasonsCard key={id} title={titulo} text={descripcion} logo={logo} />
-                    ))}  */}
-                </div>
+                    ))}  
+                </div> */}
+
 			</Container>
+			<div className='admisionStudyUsCtn' data-section="/middle">
+					<div className="admisionStudyUsCtn__containerTitle">
+						<Title
+							className="admisionStudyUsCtn__containerTitle-title"
+							title={"Beneficios Academicos"}
+							subtitle='CONOCE SOBRE NUESTROS'
+						/>
+					</div>
+
+					<div className="admisionStudyUsCtn__containerThumb">
+						{razones.map(({ id, titulo, descripcion, logo }) => (
+							<ReasonsCard key={id} title={titulo} logo={logo} text={descripcion} />
+						))}
+					</div>
+			</div>
 		</section>
 	);
 };
 
-export default AdmisionStudyUs;
+export default admisionStudyUsCtn;

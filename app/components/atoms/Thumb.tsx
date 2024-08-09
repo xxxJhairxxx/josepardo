@@ -8,12 +8,12 @@ interface ThumbProps{
     full?: boolean;
 }
 
-const Thumb = ({image,className="",full}:ThumbProps) => {
+const Thumb = ({image,className="",full=false}:ThumbProps) => {
     return (
       
-            <figure className={`${full ? "thumb__full": "thumb"} ${className}`}>
-                   {image &&<Image  src={image.url} alt={image.alternativeText || ""} width={image.width} height={image.height} />} 
-            </figure>
+            <picture className={`thumb ${className}`}>
+                   {image &&<Image className={`${full ? "!object-cover": "!object-contain"}`} src={image.url} alt={image.alternativeText ||''} width={image.width} height={image.height} />} 
+            </picture>
        
      );
 }

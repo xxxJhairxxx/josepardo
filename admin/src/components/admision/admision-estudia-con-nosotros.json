@@ -12,9 +12,6 @@
     "subtitulo": {
       "type": "string"
     },
-    "texto": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -31,6 +28,9 @@
       "type": "component",
       "repeatable": true,
       "component": "admision.razones"
+    },
+    "texto": {
+      "type": "richtext"
     }
   }
 }

@@ -10,14 +10,11 @@ interface Props {
 
 const ReasonsCard = ({ logo, title, text }: Props) => {
 	return (
-		<article className='especialidadCard'>
-			<Thumb image={logo} className='especialidadCard__logo' />
-			<section className='especialidadCard__title'>
+		<article className='reasonsCards'>
+			<Thumb image={logo} full className='reasonsCards__thumb' />
+			<section className='reasonsCards__title'>
 				<h1>{title}</h1>
-				<p>{text}</p>
 			</section>
-
-			<button className='especialidadCard__button'>Leer mas</button>
 		</article>
 	);
 };

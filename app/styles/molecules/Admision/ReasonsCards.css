@@ -1,0 +1,51 @@
+.reasonsCards {
+    @apply relative overflow-hidden;
+    border-radius: 5px;
+    background-size: cover;
+    height: calc(22.8rem * var(--scale));
+  
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 193, 7, 0.97) 10.21%,
+        rgba(255, 193, 7, 0.97) 38.33%,
+        rgba(80, 148, 21, 0) 68.54%
+      );
+      mix-blend-mode: multiply;
+    }
+  
+    &__thumb {
+      @apply w-full h-full absolute ;
+
+      img{
+        @apply tablet:object-top;
+      }
+  
+    }
+  
+    &__title {
+      @apply block mx-4 mt-5 text-white font-[400] text-[1.7rem] tablet:text-[2.5rem] absolute;
+      z-index: 10;
+    }
+  
+    @screen laptop {
+      @apply relative overflow-hidden;
+      border-radius: 5px;
+      background-size: cover;
+      width: calc(18rem * var(--scale));
+      height: calc(22.8rem * var(--scale));
+  
+      &__title {
+        @apply block  text-white font-[400] absolute;
+        font-size: calc(1.923rem * var(--scale));
+      }
+    }
+  }
+  

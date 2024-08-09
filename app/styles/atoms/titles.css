@@ -1,7 +1,7 @@
 /** @format */
 
 .title-prin {
-  @apply font-normal font-primary leading-[1.5] pb-[1rem] relative;
+	@apply font-normal font-primary leading-[1.5] pb-[1rem] relative;
 	&__subtitle {
 		@apply text-[1.6rem] font-[500] text-secondary;
 		&:after,
@@ -15,5 +15,17 @@
 		@apply text-white text-[3.2rem] font-[500];
 	}
 
-	
+	@screen laptop {
+		&__subtitle {
+			font-size: calc(2rem * var(--scale));
+			&:after,
+			&:before {
+				font-size: calc(2rem * var(--scale));
+			}
+		}
+
+		&__title {
+			font-size: calc(4.2rem * var(--scale));
+		}
+	}
 }

@@ -20,6 +20,7 @@ export interface AdmisionAdmisionBanner extends Schema.Component {
     titulo: Attribute.String;
     subtitulo: Attribute.String;
     texto: Attribute.Text;
+    image: Attribute.Media;
   };
 }
 
@@ -66,9 +67,9 @@ export interface AdmisionAdmisionEstudiaConNosotros extends Schema.Component {
   attributes: {
     titulo: Attribute.String;
     subtitulo: Attribute.String;
-    texto: Attribute.Text;
     image: Attribute.Media;
     Razones: Attribute.Component<'admision.razones', true>;
+    texto: Attribute.RichText;
   };
 }
 

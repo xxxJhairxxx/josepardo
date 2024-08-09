@@ -22,6 +22,7 @@ export default function Index({ admision, especialidades }: AdminionProps) {
 				titulo={admision.AdmisionBanner.titulo}
 				subtitulo={admision.AdmisionBanner.subtitulo}
 				texto={admision.AdmisionBanner.texto}
+				image={admision.AdmisionBanner.image}
 				admisionForm={admision.AdmisionForm}
 				especialidades={especialidades}
 			/>

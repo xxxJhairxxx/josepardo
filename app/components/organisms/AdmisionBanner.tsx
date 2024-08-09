@@ -7,13 +7,15 @@ import { loadSlim } from '@tsparticles/slim';
 import React, { useEffect, useMemo, useState } from 'react';
 import { AdmisionFormp } from '@/interfaces/admision';
 import AdmisionForm from '../molecules/AdmisionForm';
-import { EspecialidadesData } from '@/interfaces';
+import { EspecialidadesData, Picture } from '@/interfaces';
 import { Container as Containerp } from '../globals';
 import { useGenerals } from '@/context/generals.context';
+import Thumb from '../atoms/Thumb';
 interface props {
 	titulo: string;
 	subtitulo: string;
 	texto: string;
+	image: Picture;
 	admisionForm: AdmisionFormp;
 	especialidades: EspecialidadesData[];
 }
@@ -22,6 +24,7 @@ const AdmisionHeader = ({
 	titulo,
 	subtitulo,
 	texto,
+	image,
 	admisionForm,
 	especialidades,
 }: props) => {
@@ -161,6 +164,9 @@ const AdmisionHeader = ({
 						/>
 					</section>
 				</Containerp>
+				
+				<Thumb image={image} full className='AdmisionHeader__image'/>
+				
 			</header>
 		);
 	}

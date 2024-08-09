@@ -1,7 +1,7 @@
 /** @format */
 
 .AdmisionHeader {
-	@apply w-full h-[100vh] bg-black relative text-white;
+	@apply w-full h-[100vh] relative text-white;
 
 	&:after {
 		content: '';
@@ -49,7 +49,7 @@
 		}
 		&__text {
 			&-socials {
-				@apply flex gap-x-9  my-5 justify-center;
+				@apply flex gap-x-9 tablet:text-[2rem] my-5 tablet:my-10 justify-center;
 				@screen laptop {
 					@apply inline-flex mx-0;
 					font-size: calc(2rem * var(--scale));
@@ -64,7 +64,7 @@
 				}
 
 				h2 {
-					@apply text-secondary text-[1.4rem] font-[500];
+					@apply text-secondary text-[1.4rem] tablet:text-[1.7rem] font-[500];
 					&:after,
 					&:before {
 						@apply text-[1.6rem] mx-2;
@@ -82,16 +82,20 @@
 					}
 				}
 				h1 {
-					@apply font-bold font-primary text-[3.2rem] my-3;
+					@apply font-bold font-primary text-[3.2rem] tablet:text-[3.9rem] my-3;
 					@screen laptop {
 						font-size: calc(6rem * var(--scale));
 						width: calc(65rem * var(--scale));
 					}
 				}
 				p {
-					@apply my-2;
+					@apply my-2 text-white;
+					@screen tablet{
+						@apply w-[70%] text-[2rem] mx-auto;
+					}
 					@screen laptop {
 						margin-block: calc(1rem * var(--scale));
+						margin-inline:0;
 						width: calc(55rem * var(--scale));
 						font-size: calc(1.9rem * var(--scale));
 						opacity: 0.75;
@@ -101,12 +105,17 @@
 		}
 		&__formcontent {
 			@apply h-fit pb-[5rem] w-full hidden;
-			padding-top: calc(50vh);
 			@screen laptop {
 				@apply h-fit pt-0 block;
 				margin-top: calc(15rem * var(--scale));
 				margin-right: calc(12rem * var(--scale));
 			}
+		}
+	}
+	&__image{
+		@apply absolute z-10 bottom-0 left-0 right-0 mx-auto w-[70%] h-[40vh] tabletxl:hidden;
+		& > img{
+			@apply bottom-0 left-0 right-0 mx-auto absolute;
 		}
 	}
 }

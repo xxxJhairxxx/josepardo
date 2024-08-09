@@ -2,13 +2,6 @@
   @apply flex justify-center items-center;
 
   img {
-    @apply w-[80%] h-[80%] object-contain;
-  }
-}
-
-.thumb__full {
-  @apply flex justify-center items-center;
-  img {
-    @apply w-[100%] h-[100%] object-cover;
+    @apply w-full h-full ;
   }
 }

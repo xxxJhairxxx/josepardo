@@ -13,7 +13,7 @@ interface Props {
 const EspecialidadCard = ({ logo, title, text }: Props) => {
 	return (
 		<article className='especialidadCard'>
-			<Thumb image={logo} className='especialidadCard__logo' />
+			<Thumb image={logo} full className='especialidadCard__logo' />
 			<section className='especialidadCard__title'>
 				<h1>{title}</h1>
 				<p>{text}</p>

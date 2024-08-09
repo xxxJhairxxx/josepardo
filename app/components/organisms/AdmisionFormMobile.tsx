@@ -12,7 +12,7 @@ interface props {
 
 const AdmisionFormMobile = ({admisionForm,especialidades}:props) => {
   return (
-    <Container className=' py-[5rem] laptop:hidden'>
+    <Container className=' py-[5rem] tablet:w-[60%] laptop:hidden'>
         
 			<AdmisionForm
 				className={"text-white relative z-50"}
