@@ -1,37 +1,4 @@
-/** @format */
-
-.admisionStudyUs {
-	@apply relative z-50 py-10;
-	&__container {
-		&__text {
-			@apply mb-10 text-white;
-            p{ @apply mb-4}
-		}
-		&__img {
-			@apply mb-[4rem] mt-[3rem];
-		}
-	}
-	@screen tablet {
-		@apply text-center;
-	}
-	@screen laptop {
-		&__container {
-			@apply flex justify-between ;
-
-			&__text {
-				@apply text-left w-[42%];
-                width: calc(60rem * var(--scale));
-                
-			}
-			&__img {
-				@apply h-full my-0 rounded-lg overflow-hidden;
-                width: calc(70rem * var(--scale));
-			}
-		}
-	}
-}
-
-.admisionStudyUsCtn {
+.admisionBeneficios {
     @apply px-[6%] w-full pt-[4rem] pb-[6rem] relative ;
     background: rgba(73, 32, 167, 0.2);
     &__containerTitle {

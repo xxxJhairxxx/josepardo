@@ -1,0 +1,46 @@
+/** @format */
+
+.admisionModalities {
+	@apply relative z-50 py-10;
+	&__container {
+		@apply flex flex-col laptop:flex-row;
+		&__text {
+			@apply mb-10 text-white;
+			p {
+				@apply mb-4;
+			}
+		}
+		&__img {
+			@apply mb-[4rem] mt-[3rem] hidden;
+		}
+
+		&__cards {
+			@apply flex flex-col tablet:flex-row flex-wrap items-center laptop:hidden justify-center gap-8;
+		}
+	}
+	@screen tablet {
+		@apply text-center;
+	}
+	@screen laptop {
+		@apply	py-0;
+		&__container {
+			@apply flex justify-between;
+
+			&__text {
+				@apply text-left;
+				width: calc(70rem * var(--scale));
+
+				&__cards {
+					@apply flex flex-col tablet:flex-row flex-wrap items-center laptop:items-start laptop:px-0 justify-center gap-8;
+					padding: calc(5rem * var(--scale)) 0;
+
+					
+				}
+			}
+			&__img {
+				@apply h-full my-0 rounded-lg overflow-hidden block;
+				width: calc(70rem * var(--scale));
+			}
+		}
+	}
+}

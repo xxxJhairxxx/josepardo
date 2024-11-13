@@ -1,4 +1,4 @@
-.reasonsCards {
+.BenefitCards {
     @apply relative overflow-hidden;
     border-radius: 5px;
     background-size: cover;
@@ -31,7 +31,7 @@
     }
   
     &__title {
-      @apply block mx-4 mt-5 text-white font-[400] text-[1.7rem] tablet:text-[2.5rem] absolute;
+      @apply block mx-auto left-0 right-0 mt-5 text-center text-white font-[400] text-[1.5rem] tablet:text-[2.5rem] absolute;
       z-index: 10;
     }
   
@@ -44,7 +44,7 @@
   
       &__title {
         @apply block  text-white font-[400] absolute;
-        font-size: calc(1.923rem * var(--scale));
+        font-size: calc(1.6rem * var(--scale));
       }
     }
   }

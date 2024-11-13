@@ -1,14 +1,12 @@
 /** @format */
-
+import { useForm } from "@/hooks/useForm";
 import ReCAPTCHA, { ReCAPTCHA as ReCAPTCHAType } from 'react-google-recaptcha';
 import { useGenerals } from '@/context/generals.context';
 import { AdmisionFormp } from '@/interfaces/admision';
-import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { Loader } from '../atoms/Loader';
 import { EspecialidadesData } from '@/interfaces';
 import Alert from '../atoms/Alert';
-import { baseApi } from '@/lib/baseApi';
 
 interface props {
 	admisionForm: AdmisionFormp;
@@ -23,29 +21,44 @@ const AdmisionForm = ({
 		carrera,
 		celular,
 		messages,
+		email,
 		titulo,
 		subtitulo,
 	},
 	especialidades,
 	className
 }: props) => {
-	const [loading, setLoading] = useState(false);
-	const [successForm, setSuccessForm] = useState<boolean>(false);
-	const [captchaResponse, setCaptchaResponse] = useState('');
 	const [ShowCaptchaError, setShowCaptchaError] = useState(false);
 	const captchaRef = useRef<ReCAPTCHAType>(null);
 	const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA as string;
 
-	const [nombreValue, setNombreValue] = useState<string>('');
-	const [apellidoValue, setApellidoValue] = useState<string>('');
-	const [celularValue, setCelularValue] = useState<string>('');
-	const [carreraValue, setCarreraValue] = useState<string>('');
+
 	const [mensaje, setMensaje] = useState<string>('');
+
 
 	const { general } = useGenerals();
 
-	const onChangeRecaptcha = (response: any) => {
-		setCaptchaResponse(response);
+	const {
+		failure,
+		sending,
+		errors,
+		formState,
+		responseMessage,
+		validateInput,
+		validateSelect,
+		handleSubmit,
+		setFormState,
+		phoneRef,
+		phoneNumberFormatter,
+	} = useForm(messages, "/ezforms/submit", captchaRef);
+
+	const onChangeRecaptcha = () => {
+		if (captchaRef.current?.getValue()) {
+			setFormState({
+				...formState,
+				captcha: captchaRef.current?.getValue() as string,
+			});
+		}
 	};
 
 	const showAlert = (text: string) => {
@@ -56,125 +69,73 @@ const AdmisionForm = ({
 		}, 5000);
 	};
 
-	const onSubmit = async (data: any) => {
-		try {
-			if (!captchaResponse) {
-				console.log('Por favor, completa el reCAPTCHA.');
-				showAlert(messages.invalid_recaptcha);
-				return;
-			}
-			if (carreraValue === '') {
-				showAlert(messages.invalid_required);
-				return;
-			}
-			if (celularValue.length < 9 || !/^[0-9]*$/.test(celularValue)) {
-				showAlert(messages.invalid_number);
-				return;
-			}
-			if (celularValue.trim() === '') {
-				showAlert(messages.invalid_tel);
-				return;
-			}
 
-			axios
-				.post(
-					`${process.env.NEXT_PUBLIC_STRAPI_URL}/users-register?populate=deep`,
-					{
-						data: {
-							name: nombreValue,
-							last_name: apellidoValue,
-							message: carreraValue,
-							phone: celularValue,
-						},
-					}
-				)
-				.then((response) => {
-					console.log(response);
-					if (response.status === 200) {
-						setSuccessForm(true);
-						if (captchaRef.current) {
-							captchaRef.current.reset();
-						}
-
-						setCarreraValue('');
-						setCelularValue('');
-						setApellidoValue('');
-						setNombreValue('');
-						setTimeout(() => setSuccessForm(false), 5000);
-					}
-				});
-
-				try {
-					const response = await baseApi.post('/ezforms/submit', {
-						formData: {
-							name: nombreValue,
-							last_name: apellidoValue,
-							message: carreraValue,
-							phone: celularValue,
-						},
-					});
-					if (response.status === 200) {
-						console.log('Correo enviado');
-					}
-				} catch (error) {
-					console.log(error);
-				}
-			
-
-			
-		} catch (error) {
-			console.log(error);
-		}
-	};
 
 	return (
 		<div className={`AdmisionForm ${className}`}>
 			<h2 className='AdmisionForm__text'>{titulo}</h2>
 			<p className=''>{subtitulo}</p>
-			<form className='AdmisionForm__form '>
+			<form className='AdmisionForm__form ' onSubmit={handleSubmit}>
 				<div className='AdmisionForm__form-input'>
 					<input
-						className={`contactForm-form-input-input}`}
+						type="text"
+						onInput={validateInput}
 						placeholder={nombre.label}
-						value={nombreValue}
-						name='name'
-						onChange={(e: any) => setNombreValue(e.target.value)}
+						id={nombre.name}
+						name={nombre.name}
+						value={formState.name}
 					/>
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<input
-						className={`contactForm-form-input-input text-black `}
+						type="text"
+						onInput={validateInput}
 						placeholder={apellido.label}
-						name='lastname'
-						value={apellidoValue}
-						onChange={(e: any) => setApellidoValue(e.target.value)}
+						id={apellido.name}
+						name={apellido.name}
+						value={formState.last_name}
 					/>
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<select
-						name='carrera'
-						value={carreraValue}
-						onChange={(e: any) => setCarreraValue(e.target.value)}
+						id={carrera.name}
+						title={carrera.name}
+						name={carrera.name}
+						onInput={validateSelect}
+						value={formState.carrera}
 					>
-						<option value=''>{carrera.label}</option>
+						<option value='' disabled>{carrera.label}</option>
 						{especialidades.map(({ id, titulo }) => (
 							<option key={id} value={titulo}>
 								{titulo}
 							</option>
 						))}
 					</select>
+					{errors.carrera && (
+						<span className="Form-error">{errors.carrera}</span>
+					)}
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<input
-						value={celularValue}
-						name='phone'
-						onChange={(e: any) => {
-							if (e.target.value.length <= 9 && /^[0-9]*$/.test(e.target.value))
-								setCelularValue(e.target.value);
-						}}
+						type="text"
+						onInput={validateInput}
+						placeholder={email.label}
+						id={email.name}
+						name={email.name}
+						value={formState.email}
+					/>
+					{errors.email && <span className="Form-error">{errors.email}</span>}
+				</div>
+				<div className='AdmisionForm__form-input'>
+					<input
+						type="text"
+						onInput={validateInput}
 						placeholder={celular.label}
-						required
-						maxLength={9}
+						id={celular.name}
+						ref={phoneRef}
+						onKeyDown={phoneNumberFormatter}
+						name={celular.name}
+						value={formState.phone}
 					/>
 				</div>
 
@@ -183,17 +144,16 @@ const AdmisionForm = ({
 						sitekey={captchaKey}
 						onChange={onChangeRecaptcha}
 						ref={captchaRef}
-						className='  mx-0  ml-[-2rem] scale-[.85] '
 					/>
 				</div>
 				<div className='AdmisionForm__form-input'>
-					<button onClick={onSubmit} type='button'>
+					<button type='submit'>
 						{general.label_buttons.lbl_enviar}
 					</button>
-					{loading && <Loader />}
+					{sending && <Loader />}
 				</div>
 
-				{successForm && (
+				{responseMessage && (
 					<div className='AdmisionForm__messages'>
 						<span className='text-[#35B278] font-medium'>
 							{messages.mail_sent_ok} ✔

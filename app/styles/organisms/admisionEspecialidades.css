@@ -11,7 +11,7 @@
 		}
 
 		&__cards {
-			@apply flex flex-col gap-10 w-[100%];
+			@apply flex flex-col gap-10 w-[100%] ;
 
 			@screen laptop {
 				@apply grid grid-cols-3 gap-20;
@@ -20,7 +20,10 @@
 	}
 
 	&-slider {
-		@apply w-[100%] mx-auto;
+		@apply w-[100%] mx-auto ;
+		&_item{
+			@apply pt-[7rem] ;
+		}
 	}
 	&__navigation {
 		@apply relative mt-[1rem] flex items-center justify-center gap-[1rem];

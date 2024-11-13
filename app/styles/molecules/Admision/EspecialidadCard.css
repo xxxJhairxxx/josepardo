@@ -1,36 +1,44 @@
 /** @format */
 
 .especialidadCard {
-	@apply  border-[1px] border-secondary rounded-2xl text-white p-8 flex flex-col gap-2 relative;
-	@screen laptop{
-		width: calc(40rem * var(--scale));
+	@apply w-[80%] mx-auto  rounded-3xl text-white p-[3rem] flex flex-col gap-2 relative;
+	background: linear-gradient(
+		0deg,
+		rgba(13, 27, 73, 1) 77%,
+		rgba(30, 64, 175, 1) 100%
+	);
+	@screen laptop {
+		width: calc(32rem * var(--scale));
 	}
-	&:hover {
-		
 
-		& > .especialidadCard__logo {
-			@apply opacity-30;
-            img{
-                @apply scale-125;
-                filter: sepia(10%);
-            }
+	&::before {
+		@apply absolute left-0 right-0 mx-auto top-0 w-[80%] h-[45%] bg-[#2B469D]/30 content-[""] z-10;
+		clip-path: polygon(0 0, 100% 0, 65% 100%, 35% 100%);
+	}
+
+	&__logo {
+		@apply w-full h-full relative z-10 mt-[-9rem] mb-9;
+		img {
+			@apply w-full h-full rounded-3xl;
+
+			transition: transform 0.5s ease-in-out;
+		}
+
+		&-arosvg {
+			@apply w-[85%] h-fit absolute left-0 right-0 bottom-[-1rem] mx-auto z-[100];
+			
 		}
 	}
-	&__logo {
-		@apply w-full h-full absolute left-0 top-0 z-[-1] opacity-25 overflow-hidden;
-		img {
-			@apply w-full h-full;
-            
-            transition: transform 0.5s ease-in-out;
-		}
+	&__subtitle {
+		@apply bg-[#214DD8] font-semibold text-[1.3rem] rounded-lg pl-[1.2rem] pr-8 py-1 w-fit;
+		clip-path: polygon(0 0, 100% 0, 87% 100%, 0 100%);
 	}
 
 	&__title {
 		h1 {
-			@apply text-[2.3rem] tabletxl:text-[2.1rem] laptop:text-[2.7rem] pb-3 font-semibold;
-			@screen laptop{
-				font-size: calc(2.7rem * var(--scale));
-				
+			@apply text-[2rem] tabletxl:text-[2.1rem] laptop:text-[2.7rem] pb-4 pt-2 uppercase font-medium;
+			@screen laptop {
+				font-size: calc(2.3rem * var(--scale));
 			}
 		}
 		p {
@@ -39,12 +47,20 @@
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 4;
-            color:white;
+			-webkit-line-clamp: 3;
+			color: white;
 			@screen laptop {
-				font-size: calc(1.9rem * var(--scale));
+				font-size: calc(1.6rem * var(--scale));
 				max-height: calc(28rem * var(--scale));
-				-webkit-line-clamp: 6;
+				-webkit-line-clamp: 3;
+			}
+		}
+
+		.oneline {
+			@apply mt-9 mb-8;
+			@screen laptop {
+				margin-bottom: calc(1.7rem * var(--scale));
+				margin-top: calc(1.7rem * var(--scale));
 			}
 		}
 	}
@@ -52,6 +68,4 @@
 	&__button {
 		@apply font-semibold w-fit text-secondary laptop:text-[2rem];
 	}
-
-	
 }

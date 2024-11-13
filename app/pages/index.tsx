@@ -1,9 +1,10 @@
 /** @format */
 
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
+import AdmisionBeneficios from '@/components/organisms/AdmisionBeneficios';
 import AdmisionEspecialidades from '@/components/organisms/AdmisionEspecialidades';
 import AdmisionFormMobile from '@/components/organisms/AdmisionFormMobile';
-import AdmisionStudyUs from '@/components/organisms/AdmisionStudyUs';
+import AdmisionModalidades from '@/components/organisms/AdmisionModalidades';
 import { Especialidades, EspecialidadesData } from '@/interfaces';
 import { Admision, AdmisionData } from '@/interfaces/admision';
 import { baseApi } from '@/lib/baseApi';
@@ -36,12 +37,18 @@ export default function Index({ admision, especialidades }: AdminionProps) {
 				texto={admision.AdmisionEspecialidades.texto}
 				especialidades={especialidades}
 			/>
-			<AdmisionStudyUs
-				titulo={admision.AdmisionEstudiaconnostros.titulo}
-				subtitulo={admision.AdmisionEstudiaconnostros.subtitulo}
-				texto={admision.AdmisionEstudiaconnostros.texto}
-				imagen={admision.AdmisionEstudiaconnostros.image}
-				razones={admision.AdmisionEstudiaconnostros.Razones}
+			<AdmisionModalidades
+				titulo={admision.AdmisionModalidades.titulo}
+				subtitulo={admision.AdmisionModalidades.subtitulo}
+				texto={admision.AdmisionModalidades.texto}
+				imagen={admision.AdmisionModalidades.image}
+				modalidades={admision.AdmisionModalidades.Modalidad}
+			/>
+
+			<AdmisionBeneficios
+				titulo={admision.AdmimisionBeneficios.titulo}
+				subtitulo={admision.AdmimisionBeneficios.subtitulo}
+				CardBenefits={admision.AdmimisionBeneficios.CardBenefits}
 			/>
 		</>
 	);

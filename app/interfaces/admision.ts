@@ -14,8 +14,8 @@ export interface AdmisionData {
 	AdmisionBanner: AdmisionBanner;
 	AdmisionForm: AdmisionFormp;
 	AdmisionEspecialidades: AdmisionEspecialidades;
-	AdmisionEstudiaconnostros: AdmisionEstudiaconnostros;
-	AdmimisionDestacados: AdmimisionDestacados;
+	AdmisionModalidades: AdmisionModalidades;
+	AdmimisionBeneficios: AdmimisionBeneficios;
 	AdmisionGaleria: AdmisionGaleria;
 	AdmisionConvenios: AdmisionConvenios;
 	AdmisionTestimonios: AdmisioTestimonios;
@@ -36,6 +36,7 @@ export interface AdmisionFormp {
 	carrera: InputForm;
 	celular: InputForm;
 	messages: Messages;
+	email:InputForm
 	titulo:string;
 	subtitulo:string;
 }
@@ -58,30 +59,32 @@ interface AdmisionEspecialidades {
 	subtitulo: string;
 	texto: string;
 }
-interface AdmisionEstudiaconnostros {
+interface AdmisionModalidades {
 	id: number;
 	titulo: string;
-	subtitulo: string;
+	subtitulo:string;
 	texto: string;
 	image: Picture;
-	Razones: Razones[];
+	Modalidad: Modalidades[];
 }
 
-export interface Razones {
+export interface Modalidades {
 	id:number;
 	titulo: string;
 	descripcion: string;
 	logo: Picture;
 }
-interface AdmimisionDestacados {
-	CardDestacado: CardDestacado[];
+interface AdmimisionBeneficios {
+	id: number;
+	titulo: string;
+	subtitulo:string;
+	CardBenefits: CardBenefits[];
 }
 
-interface CardDestacado {
+export interface CardBenefits {
 	id: number;
-	numero: string;
 	titulo: string;
-	logo: Picture ;
+	image: Picture ;
 }
 
 interface AdmisionGaleria {
@@ -92,6 +95,7 @@ interface AdmisionGaleria {
 interface AdmisionConvenios {
 	id: number;
 	titulo: string;
+	logo: Picture[]
 }
 interface AdmisioTestimonios {
 	id: number;

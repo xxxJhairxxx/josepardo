@@ -72,7 +72,7 @@ const AdmisionEspecialidades = ({ titulo, subtitulo, texto, especialidades }: pr
 					<Swiper {...swiperOptions} loop={itemsLoop}>
 						{especialidades.map(({ id, titulo, logo, descripcion }) => (
 							<SwiperSlide
-								className=" homeProjects-slider-thumb"
+								className="admisionEspecialidades-slider_item "
 								key={id}
 							>
 
