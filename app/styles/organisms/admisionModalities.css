@@ -9,13 +9,17 @@
 			p {
 				@apply mb-4;
 			}
+			
+			&__cards{
+				@apply hidden;
+			}
 		}
 		&__img {
 			@apply mb-[4rem] mt-[3rem] hidden;
 		}
 
 		&__cards {
-			@apply flex flex-col tablet:flex-row flex-wrap items-center laptop:hidden justify-center gap-8;
+			@apply  flex flex-col tablet:flex-row flex-wrap items-center laptop:hidden justify-center gap-8;
 		}
 	}
 	@screen tablet {
