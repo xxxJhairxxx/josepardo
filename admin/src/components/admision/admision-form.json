@@ -35,6 +35,12 @@
     },
     "subtitulo": {
       "type": "string"
+    },
+    "email": {
+      "displayName": "email",
+      "type": "component",
+      "repeatable": false,
+      "component": "email.email"
     }
   }
 }

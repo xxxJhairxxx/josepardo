@@ -30,13 +30,13 @@
       "repeatable": false,
       "component": "admision.admision-especialidades"
     },
-    "AdmisionEstudiaconnostros": {
+    "AdmisionModalidades": {
       "displayName": "AdmisionEstudiaConNosotros",
       "type": "component",
       "repeatable": false,
       "component": "admision.admision-estudia-con-nosotros"
     },
-    "AdmimisionDestacados": {
+    "AdmimisionBeneficios": {
       "displayName": "AdminDestacados",
       "type": "component",
       "repeatable": false,

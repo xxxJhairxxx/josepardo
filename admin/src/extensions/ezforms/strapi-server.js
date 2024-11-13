@@ -1,9 +1,10 @@
 const axios = require("axios");
-const { schema } = require("./validateForm");
+const { schemaValidation } = require("./validateForm");
 
 module.exports = (plugin) => {
   plugin.controllers.submitController = () => ({
     async index(ctx) {
+
       let verification = {};
       let formName =
         strapi.config.get("plugin.ezforms.enableFormName") &&
@@ -11,7 +12,7 @@ module.exports = (plugin) => {
           ? ctx.request.body.formName
           : "Form";
 
-      const result = schema.validate(ctx.request.body.formData, {
+      const result = schemaValidation.validate(ctx.request.body.formData, {
         abortEarly: false,
       });
 
@@ -25,16 +26,21 @@ module.exports = (plugin) => {
           "One or more fields have an error. Please check and try again.",
           invalidArgs
         );
-      }
+      }	
 
-      // const { data } = await axios.post(
-      //   `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${ctx.request.body.formData.captcha}`
-      // );
+	//   const { data } = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
+	// 	params: {
+	// 	  secret: process.env.RECAPTCHA_SECRET_KEY,
+	// 	  response: ctx.request.body.formData.captcha,  // Aquí va el valor de la respuesta de reCAPTCHA del frontend
+	// 	},
+	//   });
+	  
+    //   if (!data.success) {
+    //     return ctx.badRequest("Captcha fail validation.");
+    //   }
 
-      // if (!data.success) {
-      //   return ctx.badRequest("Captcha fail validation.");
-      // }
-      //sends notifications
+	  
+     // sends notifications
       for (const provider of strapi.config.get(
         "plugin.ezforms.notificationProviders"
       )) {
@@ -44,6 +50,7 @@ module.exports = (plugin) => {
               .plugin("ezforms")
               .service(provider.name)
               .send(provider.config, formName, ctx.request.body.formData);
+			
           } catch (e) {
             strapi.log.error(e);
             return ctx.internalServerError("A Whoopsie Happened", e);
@@ -73,9 +80,11 @@ module.exports = (plugin) => {
     },
   });
 
+  
+
   plugin.services.formatData = () => ({
     formatData(data) {
-      const { name, last_name, phone, message } = data;
+      const { name, last_name, phone, carrera,email} = data;
 
       const body = `
      <!DOCTYPE html>
@@ -194,9 +203,9 @@ module.exports = (plugin) => {
 																	<div class style="font-size: 12px; font-family: Arial, Helvetica, sans-serif; mso-line-height-alt: 18px; color: #000; line-height: 1.5;">
 																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;">Datos del Alumno:<br><br><strong>Nombre:&nbsp; </strong>${name}</p>
 																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Apellido:&nbsp; </strong>${last_name}</p>
-																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Carrera:&nbsp; &nbsp;</strong>${message}</p>
+																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Carrera:&nbsp; &nbsp;</strong>${carrera}</p>
 																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Celular:&nbsp; &nbsp; </strong>${phone}</p>
-																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Email:&nbsp; &nbsp; &nbsp; </strong>{email}</p>
+																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Email:&nbsp; &nbsp; &nbsp; </strong>${email}</p>
 																		<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 18px;">&nbsp;</p>
 																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;">Para consultar la lista de Alumnos ve a este <span style="word-break: break-word; color: #1e40af;"><strong><a href="https://strapi.adminpardo.fun/admin" target="_blank" style="text-decoration:underline;color:#1e40af;" rel="noopener">enlace</a></strong></span></p>
 																	</div>

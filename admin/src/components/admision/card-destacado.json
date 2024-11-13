@@ -1,22 +1,21 @@
 {
   "collectionName": "components_admision_card_destacados",
   "info": {
-    "displayName": "CardDestacado"
+    "displayName": "CardDestacado",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "logo": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
-    "numero": {
-      "type": "string"
+      ]
     },
     "titulo": {
       "type": "string"

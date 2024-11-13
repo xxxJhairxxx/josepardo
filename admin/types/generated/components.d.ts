@@ -4,9 +4,12 @@ export interface AdmisionAdminDestacados extends Schema.Component {
   collectionName: 'components_admision_admin_destacados';
   info: {
     displayName: 'AdminDestacados';
+    description: '';
   };
   attributes: {
-    CardDestacado: Attribute.Component<'admision.card-destacado', true>;
+    CardBenefits: Attribute.Component<'admision.card-destacado', true>;
+    titulo: Attribute.String;
+    subtitulo: Attribute.String;
   };
 }
 
@@ -39,9 +42,11 @@ export interface AdmisionAdmisionConvenios extends Schema.Component {
   collectionName: 'components_admision_admision_convenios';
   info: {
     displayName: 'AdmisionConvenios';
+    description: '';
   };
   attributes: {
     titulo: Attribute.String;
+    logo: Attribute.Media;
   };
 }
 
@@ -68,7 +73,7 @@ export interface AdmisionAdmisionEstudiaConNosotros extends Schema.Component {
     titulo: Attribute.String;
     subtitulo: Attribute.String;
     image: Attribute.Media;
-    Razones: Attribute.Component<'admision.razones', true>;
+    Modalidad: Attribute.Component<'admision.razones', true>;
     texto: Attribute.RichText;
   };
 }
@@ -87,6 +92,7 @@ export interface AdmisionAdmisionForm extends Schema.Component {
     messages: Attribute.JSON;
     titulo: Attribute.String;
     subtitulo: Attribute.String;
+    email: Attribute.Component<'email.email'>;
   };
 }
 
@@ -106,10 +112,10 @@ export interface AdmisionCardDestacado extends Schema.Component {
   collectionName: 'components_admision_card_destacados';
   info: {
     displayName: 'CardDestacado';
+    description: '';
   };
   attributes: {
-    logo: Attribute.Media;
-    numero: Attribute.String;
+    image: Attribute.Media;
     titulo: Attribute.String;
   };
 }
@@ -169,6 +175,17 @@ export interface CardEspecialidadCardEspecialidad extends Schema.Component {
     displayName: 'CardEspecialidad';
   };
   attributes: {};
+}
+
+export interface EmailEmail extends Schema.Component {
+  collectionName: 'components_email_emails';
+  info: {
+    displayName: 'email';
+  };
+  attributes: {
+    name: Attribute.String;
+    label: Attribute.String;
+  };
 }
 
 export interface ErrorMessagesMensajesDeError extends Schema.Component {
@@ -288,6 +305,7 @@ declare module '@strapi/types' {
       'admision.input-admision': AdmisionInputAdmision;
       'admision.razones': AdmisionRazones;
       'card-especialidad.card-especialidad': CardEspecialidadCardEspecialidad;
+      'email.email': EmailEmail;
       'error-messages.mensajes-de-error': ErrorMessagesMensajesDeError;
       'informacion.informacion': InformacionInformacion;
       'labels.labels': LabelsLabels;

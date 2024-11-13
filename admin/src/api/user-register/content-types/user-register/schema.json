@@ -4,7 +4,8 @@
   "info": {
     "singularName": "user-register",
     "pluralName": "users-register",
-    "displayName": "Usuarios Registrados"
+    "displayName": "Usuarios Registrados",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,9 @@
       "type": "string"
     },
     "celular": {
+      "type": "string"
+    },
+    "email": {
       "type": "string"
     }
   }

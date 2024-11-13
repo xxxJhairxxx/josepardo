@@ -23,7 +23,7 @@
         "audios"
       ]
     },
-    "Razones": {
+    "Modalidad": {
       "displayName": "Razones",
       "type": "component",
       "repeatable": true,

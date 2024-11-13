@@ -1,12 +1,23 @@
 {
   "collectionName": "components_admision_admision_convenios",
   "info": {
-    "displayName": "AdmisionConvenios"
+    "displayName": "AdmisionConvenios",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "titulo": {
       "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

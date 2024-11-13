@@ -796,8 +796,8 @@ export interface ApiAdmisionAdmision extends Schema.SingleType {
     AdmisionBanner: Attribute.Component<'admision.admision-banner'>;
     AdmisionForm: Attribute.Component<'admision.admision-form'>;
     AdmisionEspecialidades: Attribute.Component<'admision.admision-especialidades'>;
-    AdmisionEstudiaconnostros: Attribute.Component<'admision.admision-estudia-con-nosotros'>;
-    AdmimisionDestacados: Attribute.Component<'admision.admin-destacados'>;
+    AdmisionModalidades: Attribute.Component<'admision.admision-estudia-con-nosotros'>;
+    AdmimisionBeneficios: Attribute.Component<'admision.admin-destacados'>;
     AdmisionGaleria: Attribute.Component<'admision.galeria-de-imagenes'>;
     AdmisionConvenios: Attribute.Component<'admision.admision-convenios'>;
     AdmisionTestimonios: Attribute.Component<'admision.admision-testimonios'>;
@@ -923,6 +923,7 @@ export interface ApiUserRegisterUserRegister extends Schema.CollectionType {
     singularName: 'user-register';
     pluralName: 'users-register';
     displayName: 'Usuarios Registrados';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -932,6 +933,7 @@ export interface ApiUserRegisterUserRegister extends Schema.CollectionType {
     apellidos: Attribute.String;
     carrera_interes: Attribute.String;
     celular: Attribute.String;
+    email: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

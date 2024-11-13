@@ -1,15 +1,22 @@
 {
   "collectionName": "components_admision_admin_destacados",
   "info": {
-    "displayName": "AdminDestacados"
+    "displayName": "AdminDestacados",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "CardDestacado": {
+    "CardBenefits": {
       "displayName": "CardDestacado",
       "type": "component",
       "repeatable": true,
       "component": "admision.card-destacado"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
     }
   }
 }
