@@ -106,8 +106,8 @@ const AdmisionForm = ({
 					>
 						<option value='' disabled>{carrera.label}</option>
 						{especialidades.map(({ id, titulo }) => (
-							<option key={id} value={titulo}>
-								{titulo}
+							<option key={id} value={titulo.replace(/\//g, "")}>
+								{titulo.replace(/\//g, "")}
 							</option>
 						))}
 					</select>
