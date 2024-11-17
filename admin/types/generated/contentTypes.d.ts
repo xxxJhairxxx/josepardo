@@ -802,6 +802,7 @@ export interface ApiAdmisionAdmision extends Schema.SingleType {
     AdmisionConvenios: Attribute.Component<'admision.admision-convenios'>;
     AdmisionTestimonios: Attribute.Component<'admision.admision-testimonios'>;
     AdmisionBlog: Attribute.Component<'admision.admision-blog'>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

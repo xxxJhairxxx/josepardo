@@ -65,6 +65,11 @@
       "type": "component",
       "repeatable": false,
       "component": "admision.admision-blog"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

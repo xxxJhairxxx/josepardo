@@ -20,6 +20,7 @@ export interface AdmisionData {
 	AdmisionConvenios: AdmisionConvenios;
 	AdmisionTestimonios: AdmisioTestimonios;
 	AdmisionBlog: AdmisionBlog;
+	seo: MetaSEO;
 }
 
 interface AdmisionBanner {

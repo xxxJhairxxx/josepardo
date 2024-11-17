@@ -1,5 +1,6 @@
 /** @format */
 
+import { SeoEngine } from '@/components/globals';
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
 import AdmisionBeneficios from '@/components/organisms/AdmisionBeneficios';
 import AdmisionEspecialidades from '@/components/organisms/AdmisionEspecialidades';
@@ -50,6 +51,7 @@ export default function Index({ admision, especialidades }: AdminionProps) {
 				subtitulo={admision.AdmimisionBeneficios.subtitulo}
 				CardBenefits={admision.AdmimisionBeneficios.CardBenefits}
 			/>
+			<SeoEngine seo={admision.seo} />
 		</>
 	);
 }
