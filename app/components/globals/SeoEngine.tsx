@@ -14,6 +14,11 @@ export const SeoEngine: FC<SeoEngineProps> = ({ seo }) => {
          <link rel="canonical" href={seo.canonicalURL || ""}></link>
          <meta name="description" content={seo.metaDescription || ""} />
          <meta name="keywords" content={seo.keywords || ""} />
+         <meta name="robots" content="index, follow" />
+         <meta name="author" content="Jhair Hernan Infanzon Quispe" />
+         <meta name="publisher" content="Jhair Hernan Infanzon Quispe" />
+
+
 
          {/* <---->>> Meta Social Support <<<------> */}
 
