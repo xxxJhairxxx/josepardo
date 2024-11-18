@@ -35,14 +35,14 @@ const EspecialidadCard = ({ logo, title, text }: Props) => {
 			<span className='especialidadCard__subtitle'>Especialidad</span>
 			<section className='especialidadCard__title'>
 				{title.includes('/') ? (
-					<h1>
+					<h3>
 						{title.split('/').map((splitext, index) => (
 							<span key={index}>
 								{splitext} <br />
 							</span>
 						))}
-					</h1>
-				) : <h1 className='oneline'>{title}</h1>
+					</h3>
+				) : <h3 className='oneline'>{title}</h3>
 				}
 				<p>{text}</p>
 			</section>

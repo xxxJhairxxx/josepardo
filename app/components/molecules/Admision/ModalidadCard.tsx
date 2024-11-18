@@ -13,7 +13,7 @@ const ModalidadCards = ({ logo, title, text }: Props) => {
 		<article className='modalidadCards'>
 			<Thumb image={logo} full className='modalidadCards__thumb' />
 			<section className='modalidadCards__description'>
-				<h1>{title}</h1>
+				<h3>{title}</h3>
 				<p>{text}</p>
 			</section>
 		</article>

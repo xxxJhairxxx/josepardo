@@ -12,7 +12,7 @@ const BenefitsCard = ({  titulo, image }: Props) => {
 		<article className='BenefitCards'>
 			<Thumb image={image} full className='BenefitCards__thumb' />
 			<section className='BenefitCards__title'>
-				<h1>{titulo}</h1>
+				<h3>{titulo}</h3>
 			</section>
 		</article>
 	);
