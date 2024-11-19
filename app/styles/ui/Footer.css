@@ -17,6 +17,9 @@
 		}
 
 		&__info {
+      h4{
+        @apply py-4;
+      }
 			&__socials {
 				@apply flex gap-5 pt-[1rem];
 			}
@@ -36,6 +39,10 @@
 
       &__info{
         @apply w-fit;
+        h4{
+          font-size: calc(2rem * var(--scale)) 0;
+          padding: calc(1.5rem * var(--scale)) 0;
+        }
       }
 		}
 	}

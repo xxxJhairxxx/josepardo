@@ -16,6 +16,7 @@ const Footer = () => {
 				</div>
 
 				<div className='Footer__content__info'>
+					<h4 className='font-[500]'>REDES SOCIALES</h4>
 					<section className='Footer__content__info__socials'>
 						{redes_sociales.map(({ id, tipo, url }) => (
 							<a key={id} href={url} title={!url ? "muy pronto" : tipo} className={`icon-${tipo}`} />
