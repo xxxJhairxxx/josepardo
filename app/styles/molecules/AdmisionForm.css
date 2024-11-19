@@ -1,7 +1,7 @@
 /** @format */
 
 .AdmisionForm {
-	@apply  bg-[#0C1745] rounded-xl w-[100%] mx-auto px-10 py-10;
+	@apply bg-[#0C1745] rounded-xl w-[100%] mx-auto px-10 py-10;
 	&__text {
 		@apply font-[600] text-[2.5rem];
 	}
@@ -24,8 +24,24 @@
 			}
 		}
 	}
+
+	.custom-recaptcha {
+		transform: scale(0.9); /* Cambia el valor para ajustar el tamaño */
+		transform-origin: 0 0;
+
+		@screen laptop {
+			transform: scale(
+				0.89
+			); /* Asegura que el punto de anclaje esté en la esquina superior izquierda */
+		}
+
+		@screen desktop {
+			transform: scale(1);
+			
+		}
+	}
 	@screen laptop {
-		@apply  bg-blue-800/25;
+		@apply bg-blue-800/25;
 		width: calc(44rem * var(--scale));
 		padding: calc(3rem * var(--scale)) calc(4rem * var(--scale));
 		&__text {
@@ -58,7 +74,6 @@
 		}
 
 		&__messages {
-			
 			font-size: calc(1.85rem * var(--scale));
 		}
 	}

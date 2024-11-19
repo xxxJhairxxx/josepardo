@@ -139,11 +139,12 @@ const AdmisionForm = ({
 					/>
 				</div>
 
-				<div className='AdmisionForm__form-recaptcha p-0 '>
+				<div className='AdmisionForm__form-recaptcha p-0'>
 					<ReCAPTCHA
 						sitekey={captchaKey}
 						onChange={onChangeRecaptcha}
 						ref={captchaRef}
+						className="custom-recaptcha"
 					/>
 				</div>
 				<div className='AdmisionForm__form-input'>
