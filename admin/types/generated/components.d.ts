@@ -196,6 +196,17 @@ export interface ErrorMessagesMensajesDeError extends Schema.Component {
   attributes: {};
 }
 
+export interface FooterFooter extends Schema.Component {
+  collectionName: 'components_footer_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    text: Attribute.Text;
+    copyright: Attribute.String;
+  };
+}
+
 export interface InformacionInformacion extends Schema.Component {
   collectionName: 'components_informacion_informacions';
   info: {
@@ -307,6 +318,7 @@ declare module '@strapi/types' {
       'card-especialidad.card-especialidad': CardEspecialidadCardEspecialidad;
       'email.email': EmailEmail;
       'error-messages.mensajes-de-error': ErrorMessagesMensajesDeError;
+      'footer.footer': FooterFooter;
       'informacion.informacion': InformacionInformacion;
       'labels.labels': LabelsLabels;
       'shared.meta-social': SharedMetaSocial;

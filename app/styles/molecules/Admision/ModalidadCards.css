@@ -31,7 +31,7 @@
 	&__description {
 		@apply text-white;
 		z-index: 10;
-		h1 {
+		h3 {
 			@apply mt-5 mb-10 laptop:mb-3 text-white font-[400] text-[1.7rem] tablet:text-[1.9rem];
 		}
 		p {
@@ -50,14 +50,14 @@
 		&__description {
 			@apply block text-center  text-white font-[400];
 
-			h1 {
+			h3 {
 				font-size: calc(1.5rem * var(--scale));
 			}
 
 			p {
 				width: 80%;
 				margin: auto;
-				padding: 1rem 0;
+				padding: 0.5rem 0;
 				font-size: calc(1.3rem * var(--scale));
 			}
 		}

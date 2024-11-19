@@ -70,7 +70,6 @@
 		}
 		&__navigation {
 			@apply absolute mt-[1rem] justify-between w-[78%];
-			trasnform: translateY(-50%);
 			transform: translateX(-50%);
 			top: 52%;
 			left: 50%;

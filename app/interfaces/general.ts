@@ -13,6 +13,7 @@ export interface GeneralData {
 	publishedAt: string;
 	label_buttons: LabelsButtons;
 	informacion: Informacion;
+	Footer:Footer;
 }
 export interface Logo {
 	id: number;
@@ -53,4 +54,9 @@ export interface SocialNetworks {
 	id: number;
 	tipo: string;
 	url: string;
+}
+
+export interface Footer{
+	text:string;
+	copyright:string;
 }

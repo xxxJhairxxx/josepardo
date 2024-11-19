@@ -821,6 +821,42 @@ export interface ApiAdmisionAdmision extends Schema.SingleType {
   };
 }
 
+export interface ApiBlogPostBlogPost extends Schema.CollectionType {
+  collectionName: 'blog_posts';
+  info: {
+    singularName: 'blog-post';
+    pluralName: 'blog-posts';
+    displayName: 'BlogPosts';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String;
+    text: Attribute.RichText;
+    image: Attribute.Media;
+    destacado: Attribute.Boolean;
+    slug: Attribute.UID<'api::blog-post.blog-post', 'titulo'>;
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-post.blog-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-post.blog-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEnviromentEnviroment extends Schema.SingleType {
   collectionName: 'enviroments';
   info: {
@@ -899,7 +935,7 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
   attributes: {
     label_buttons: Attribute.Component<'labels.labels'>;
     informacion: Attribute.Component<'informacion.informacion'>;
-    Mensajes_Error: Attribute.Component<'error-messages.mensajes-de-error'>;
+    Footer: Attribute.Component<'footer.footer'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -972,6 +1008,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::admision.admision': ApiAdmisionAdmision;
+      'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::enviroment.enviroment': ApiEnviromentEnviroment;
       'api::especialidad.especialidad': ApiEspecialidadEspecialidad;
       'api::general.general': ApiGeneralGeneral;

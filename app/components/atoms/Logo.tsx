@@ -1,4 +1,4 @@
-import Image from 'next/image'
+
 import Link from 'next/link'
 import { FC, useEffect, useState } from 'react'
 import { useGenerals } from '../../context/generals.context'
@@ -6,22 +6,20 @@ import Thumb from './Thumb'
 
 interface LogoProps {
   className?: string
-  alt?: boolean
+  type?: number
 }
 
-export const Logo: FC<LogoProps> = ({ alt = false, className }) => {
-  const { general:{informacion:{logo}} } = useGenerals()
+export const Logo: FC<LogoProps> = ({ className, type }) => {
+  const { general: { informacion: { logo } } } = useGenerals()
 
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(window.innerWidth < 1200);
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setWindowWidth(width);
       setIsMobileScreen(width < 1200);
     };
-
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -30,10 +28,18 @@ export const Logo: FC<LogoProps> = ({ alt = false, className }) => {
   }, []);
 
   return (
-    <Link href={'/'} className={`logoCont ${className}`} legacyBehavior>
-        {logo && (
-          <Thumb full className='logoCont__thumb' image={isMobileScreen ? logo[0] : logo[1]} />
-        )}
-    </Link>
+
+
+    <div className={`logoCont ${className}`}>
+      {logo && type
+        ?
+        <Thumb full className='logoCont__thumb' image={logo[type]} />
+        :
+        <Thumb full className='logoCont__thumb' image={isMobileScreen ? logo[0] : logo[1]} />}
+
+
+
+
+    </div>
   )
 }

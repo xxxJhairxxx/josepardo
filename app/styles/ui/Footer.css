@@ -1,325 +1,42 @@
+/** @format */
+
 .Footer {
-  @apply bg-[#1A2C21] pt-[5rem] text-white font-light;
-  border-top: 5px solid #ee7220;
+	@apply py-[3rem]  w-full z-[100] relative bg-[#4820A7]/30 text-white font-light;
 
-  @screen laptop {
-    padding-top: calc(7.7rem * var(--scale));
-  }
+	&__content {
+		&__description {
+			&__logo {
+				@apply justify-start;
+				.logoCont__thumb {
+					@apply w-[18rem];
+				}
+			}
+			&__text {
+				@apply text-[#D4D2FF]/80 leading-[2.9rem] text-[1.7rem] py-[2rem];
+			}
+		}
 
-  &-container {
-    @screen tabletlg {
-      @apply flex justify-center;
-      gap: calc(4rem * var(--scale));
-    }
-    @screen laptop {
-      gap: calc(7rem * var(--scale));
-      @apply justify-between;
-    }
+		&__info {
+			&__socials {
+				@apply flex gap-5 pt-[1rem];
+			}
 
-    &-prin {
-      &-info {
-        @apply hidden;
+			&__copyright {
+				@apply pt-[2.5rem] text-[1.6rem] font-normal;
+			}
+		}
+	}
 
-        @screen laptop {
-          @apply flex flex-col;
-          margin-top: calc(3.3rem * var(--scale));
-          gap: calc(1rem * var(--scale));
-        }
+	@screen laptop {
+		&__content {
+			@apply flex justify-between items-center;
+			&__description {
+				@apply w-[40%];
+			}
 
-        li {
-          @apply text-white;
-          font-size: calc(1.5rem * var(--scale));
-          line-height: calc(2.2rem * var(--scale));
-
-          a {
-            @apply flex items-center justify-start;
-          }
-
-          &:first-child {
-            a {
-              gap: calc(0.9rem * var(--scale));
-            }
-
-            i {
-              font-size: calc(1.5rem * var(--scale));
-              margin-left: calc(0.1rem * var(--scale));
-            }
-          }
-
-          &:last-child {
-            a {
-              gap: calc(0.7rem * var(--scale));
-            }
-
-            i {
-              font-size: calc(1.4rem * var(--scale));
-            }
-          }
-        }
+      &__info{
+        @apply w-fit;
       }
-    }
-  }
-
-  &-cont {
-    @apply flex justify-between;
-
-    @screen laptop {
-    }
-
-    h4 {
-      @apply font-normal text-[1.5rem] text-white;
-
-      @screen laptop {
-        font-size: calc(1.9rem * var(--scale));
-      }
-    }
-
-    &-list {
-      @apply mt-[1.4rem] flex flex-col gap-[1.3rem];
-
-      @screen laptop {
-        margin-top: calc(3.9rem * var(--scale));
-        gap: calc(2.2rem * var(--scale));
-      }
-
-      &.links {
-        a:last-child {
-          @apply hidden;
-        }
-      }
-
-      p,
-      a {
-        @apply text-white;
-        @screen tabletlg {
-          font-size: calc(1.3rem * var(--scale));
-        }
-        @screen laptop {
-          font-size: calc(1.5rem * var(--scale));
-          line-height: calc(2.2rem * var(--scale));
-        }
-      }
-
-      li {
-        @apply font-light text-[1.3rem] leading-[1.3rem] text-[#D1D1D1];
-
-        @screen laptop {
-          @apply text-white;
-          font-size: calc(1.5rem * var(--scale));
-          line-height: calc(2.2rem * var(--scale));
-        }
-      }
-    }
-
-    &-desktop {
-      @apply hidden;
-
-      @screen tabletlg {
-        @apply flex;
-      }
-      @screen laptop {
-        h4 {
-          font-size: calc(1.9rem * var(--scale));
-        }
-      }
-    }
-  }
-
-  &-logo-mobile {
-    @apply w-[6.1rem] h-[6.54rem];
-
-    @screen tabletlg {
-      @apply hidden;
-    }
-  }
-
-  &-logo-desktop {
-    @apply hidden;
-
-    @screen tabletlg {
-      @apply flex;
-      height: calc(12.76rem * var(--scale));
-      width: calc(11.9rem * var(--scale));
-      margin-right: calc(2.1rem * var(--scale));
-    }
-  }
-
-  &-contInfo {
-    @apply mt-[3.6rem];
-
-    @screen tabletlg {
-      @apply hidden;
-    }
-
-    &-title {
-      @apply flex items-center justify-between pb-[0.55rem];
-      border-bottom: 1px solid white;
-
-      h4 {
-        @apply font-normal text-[1.5rem] leading-[1.21rem];
-      }
-
-      i {
-        font-size: 1rem;
-      }
-    }
-
-    &-content {
-      @apply flex flex-col gap-[1.3rem] pt-[1.25rem];
-      transition: all 0.3s ease-in-out;
-
-      p,
-      a {
-        @apply font-light text-[1.3rem] leading-[1.5rem] text-[#BEBEBE];
-        transition: all 0.5s ease-in-out;
-      }
-    }
-  }
-
-  &-socials {
-    border-top: 1px solid #31523d;
-    border-bottom: 1px solid #31523d;
-    @apply mt-[4.35rem] flex flex-col justify-center items-center gap-[1.64rem] py-[2.9rem] px-[2rem];
-
-    @screen laptop {
-      @apply flex-row justify-start;
-
-      margin-top: calc(6.8rem * var(--scale));
-      padding-block: calc(2.8rem * var(--scale));
-      padding-inline: calc(31rem * var(--scale));
-      gap: calc(1.8rem * var(--scale));
-    }
-
-    p {
-      @apply font-light text-[1.27rem] leading-[1.5rem] text-white;
-
-      @screen laptop {
-        font-size: calc(1.4rem * var(--scale));
-        line-height: calc(1.4rem * var(--scale));
-      }
-    }
-
-    &-icons {
-      @apply flex items-center gap-[1rem];
-
-      @screen laptop {
-        gap: calc(1.3rem * var(--scale));
-      }
-
-      li {
-        @apply bg-white flex items-center justify-center w-[2.14rem] h-[2.14rem] rounded-[0.3rem];
-
-        @screen laptop {
-          width: calc(2.3rem * var(--scale));
-          height: calc(2.3rem * var(--scale));
-        }
-
-        &:first-child {
-          @apply items-end;
-
-          i {
-            @apply text-[1.7rem];
-
-            @screen laptop {
-              @apply pl-[0.1rem];
-              font-size: calc(1.8rem * var(--scale));
-            }
-          }
-        }
-
-        &:nth-child(2) {
-          i {
-            @screen laptop {
-              @apply pl-[0.1rem];
-              font-size: calc(1.5rem * var(--scale));
-            }
-          }
-        }
-
-        &:last-child {
-          i {
-            @apply text-[1.15rem] pt-[0.1rem];
-
-            @screen laptop {
-              @apply pl-[0.1rem];
-              font-size: calc(1.3rem * var(--scale));
-            }
-          }
-        }
-      }
-
-      a {
-        @apply flex items-center justify-center;
-      }
-      i {
-        @apply text-[1.3rem] text-[#1A2C21];
-
-        @screen laptop {
-          font-size: calc(1.2rem * var(--scale));
-        }
-      }
-    }
-  }
-
-  &-legal {
-    @apply py-[2rem] px-[2rem];
-
-    @screen laptop {
-      padding-block: calc(2.6rem * var(--scale));
-    }
-
-    p {
-      @apply text-center  font-normal text-[1.2rem] leading-[1.59rem] text-white opacity-50;
-
-      @screen laptop {
-        opacity: 1;
-        font-size: calc(1.4rem * var(--scale));
-        line-height: calc(1.4rem * var(--scale));
-      }
-    }
-  }
-
-  &-infoMobile {
-    @apply py-[2rem];
-
-    ul {
-      @apply flex flex-col items-center gap-[0.95rem];
-
-      @screen tablet {
-        @apply flex-row justify-center gap-[5rem];
-      }
-
-      li {
-        @apply text-white text-[1.3rem] leading-[1.3rem];
-
-        a {
-          @apply flex items-center;
-        }
-
-        &:first-child {
-          a {
-            @apply gap-[0.9rem];
-          }
-
-          i {
-            @apply text-[1.3rem];
-          }
-        }
-
-        &:last-child {
-          a {
-            @apply gap-[0.7rem];
-          }
-
-          i {
-            @apply text-[1.2rem];
-          }
-        }
-      }
-    }
-
-    @screen laptop {
-      @apply hidden;
-    }
-  }
+		}
+	}
 }

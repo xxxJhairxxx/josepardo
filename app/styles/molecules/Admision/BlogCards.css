@@ -1,0 +1,61 @@
+/** @format */
+
+.BlogCard {
+	@apply w-[92%] overflow-hidden bg-[#4920A7]/20;
+	border-radius: 5px;
+
+	&__thumb {
+		@apply h-[20rem] w-full;
+		img {
+			@apply object-top;
+		}
+	}
+
+	&__content {
+		@apply px-[1.5rem] py-[1.5rem] flex flex-col;
+		&__date {
+			@apply text-start text-secondary;
+			i {
+				@apply text-[1.1rem] mr-2;
+			}
+			time {
+				@apply text-[1.2rem] font-[300];
+			}
+		}
+		&__title {
+			@apply my-5  font-[600] text-[1.8rem] text-start tablet:text-[2.5rem];
+		}
+		&__text {
+			@apply text-start font-[300];
+			max-height: 20rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+		}
+		hr {
+			@apply mt-[1.5rem];
+		}
+		&__link {
+			@apply text-secondary text-[1.2rem] font-[300] text-start mt-[1.5rem];
+		}
+	}
+
+	@screen laptop {
+		border-radius: 5px;
+		background-size: cover;
+		width: calc(40rem * var(--scale));
+
+		&__thumb {
+			height: calc(23rem * var(--scale));
+		}
+
+		&__content {
+			&__title {
+				@apply text-white ;
+				font-size: calc(2.3rem * var(--scale));
+			}
+		}
+	}
+}

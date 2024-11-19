@@ -4,7 +4,7 @@
     &__containerTitle {
         @apply text-center mb-8;}
 	&__containerThumb {
-		@apply w-full grid grid-cols-2 gap-[2.5rem];
+		@apply w-full grid grid-cols-2 gap-y-[2rem] gap-x-[1.8rem];
 	}
 
 	@screen laptop {

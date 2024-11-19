@@ -35,7 +35,7 @@
 	}
 
 	&__title {
-		h1 {
+		h3 {
 			@apply text-[2rem] tabletxl:text-[2.1rem] laptop:text-[2.7rem] pb-4 pt-2 uppercase font-medium;
 			@screen laptop {
 				font-size: calc(2.3rem * var(--scale));

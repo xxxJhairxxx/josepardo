@@ -31,7 +31,7 @@
     }
   
     &__title {
-      @apply block mx-auto left-0 right-0 mt-5 text-center text-white font-[400] text-[1.5rem] tablet:text-[2.5rem] absolute;
+      @apply block mx-auto left-0 right-0 mt-5 text-center text-white font-[500] text-[1.5rem] tablet:text-[2.5rem] absolute;
       z-index: 10;
     }
   

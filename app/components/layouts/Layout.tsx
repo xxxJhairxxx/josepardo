@@ -2,6 +2,7 @@
 
 import { Jost } from 'next/font/google';
 import { FC, PropsWithChildren } from 'react';
+import Footer from '../ui/Footer';
 
 const primary = Jost({
 	subsets: ['latin'],
@@ -11,10 +12,13 @@ const primary = Jost({
 
 export const Layout: FC<PropsWithChildren> = ({ menu, children }: any) => {
 	return (
-		<main className={`${primary.variable}`}>
-		
-			{children}
-			
-		</main>
+		<div className={`${primary.variable}`}>
+			<main>
+
+				{children}
+
+			</main>
+			<Footer />
+		</div>
 	);
 };
