@@ -48,6 +48,10 @@ const initialState: ControllerState = {
 			redes_sociales: [],
 			logo: [],
 		},
+		Footer:{
+			text:'',
+			copyright:''
+		}
 	},
 };
 
