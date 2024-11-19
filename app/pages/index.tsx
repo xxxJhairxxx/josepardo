@@ -53,10 +53,14 @@ export default function Index({ admision, especialidades, blogpost }: AdminionPr
 				subtitulo={admision.AdmimisionBeneficios.subtitulo}
 				CardBenefits={admision.AdmimisionBeneficios.CardBenefits}
 			/>
-			<AdmisionBlog
-				titulo={admision.AdmisionBlog.titulo}
-				subtitulo={admision.AdmisionBlog.subtitulo}
-				blogpost={blogpost} />
+
+			{blogpost.length > 0 &&
+				<AdmisionBlog
+					titulo={admision.AdmisionBlog.titulo}
+					subtitulo={admision.AdmisionBlog.subtitulo}
+					blogpost={blogpost} />}
+
+
 			<SeoEngine seo={admision.seo} />
 		</>
 	);

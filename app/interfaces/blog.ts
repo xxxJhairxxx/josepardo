@@ -15,5 +15,6 @@ export interface BlogData {
 	titulo: string;
 	slug: string;
 	text: string;
+	destacado:boolean;
 	seo: MetaSEO;
 }

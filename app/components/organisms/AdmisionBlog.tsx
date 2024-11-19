@@ -11,6 +11,9 @@ interface props {
 
 const AdmisionBlog = ({ titulo, subtitulo, blogpost }: props) => {
 
+
+    const BlogDestacados = blogpost.filter(item => item.destacado)
+
     return (
         <section className='admisionBlog '>
             <Container className='admisionBlog__container'>
@@ -18,7 +21,7 @@ const AdmisionBlog = ({ titulo, subtitulo, blogpost }: props) => {
                     <Title title={titulo} subtitle={subtitulo} />
 
                     <div className='admisionBlog__container__cards'>
-                        {blogpost.map(({ titulo, slug, publishedAt, text, id, image }) => (
+                        {BlogDestacados.slice(0,3).map(({ titulo, slug, publishedAt, text, id, image }) => (
                             <BlogCard key={id} titulo={titulo} slug={slug} publishedAt={publishedAt} image={image} text={text} />
                         ))}
                     </div>
