@@ -200,10 +200,12 @@ export interface FooterFooter extends Schema.Component {
   collectionName: 'components_footer_footers';
   info: {
     displayName: 'Footer';
+    description: '';
   };
   attributes: {
     text: Attribute.Text;
     copyright: Attribute.String;
+    lbl_siguenos: Attribute.String;
   };
 }
 

@@ -50,7 +50,8 @@ const initialState: ControllerState = {
 		},
 		Footer:{
 			text:'',
-			copyright:''
+			copyright:'',
+			lbl_siguenos:''
 		}
 	},
 };

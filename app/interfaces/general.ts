@@ -59,4 +59,5 @@ export interface SocialNetworks {
 export interface Footer{
 	text:string;
 	copyright:string;
+	lbl_siguenos:string
 }

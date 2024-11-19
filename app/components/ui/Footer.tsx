@@ -5,7 +5,7 @@ import { useGenerals } from '@/context/generals.context'
 
 const Footer = () => {
 
-	const { general: { informacion: { redes_sociales }, Footer: { text, copyright } } } = useGenerals()
+	const { general: { informacion: { redes_sociales }, Footer: { text, copyright,lbl_siguenos } } } = useGenerals()
 
 	return (
 		<footer className='Footer'>
@@ -16,7 +16,7 @@ const Footer = () => {
 				</div>
 
 				<div className='Footer__content__info'>
-					<h4 className='font-[500]'>REDES SOCIALES</h4>
+					<h4 className='font-[500]'>{lbl_siguenos}</h4>
 					<section className='Footer__content__info__socials'>
 						{redes_sociales.map(({ id, tipo, url }) => (
 							<a key={id} href={url} title={!url ? "muy pronto" : tipo} className={`icon-${tipo}`} />
