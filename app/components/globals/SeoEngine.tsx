@@ -18,6 +18,17 @@ export const SeoEngine: FC<SeoEngineProps> = ({ seo }) => {
          <meta name="viewport" content={seo.metaViewport || "width=device-width, initial-scale=1.0"}></meta>
          <meta name="author" content="Jhair Hernan Infanzon Quispe" />
          <meta name="publisher" content="Jhair Hernan Infanzon Quispe" />
+         
+         <meta property="article:published_time" content="2024-11-20T12:00:00Z" />
+         <meta property="article:modified_time" content="2024-11-20T15:00:00Z" />
+         <meta property="article:author" content="https://portafolio-jhair-infanzon.vercel.app" />
+         <meta property="article:section" content="Educación" />
+         <meta property="article:tag" content="admision pardo" />
+         <meta property="article:tag" content="examen jose pardo" />
+         <meta property="article:tag" content="jose pardo admision" />
+         <meta property="article:tag" content="examen 2025 jose pardo" />
+
+
 
          <meta property="og:url" content={seo.canonicalURL || ""} />
          <meta property="og:type" content="website" />
