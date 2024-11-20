@@ -136,12 +136,12 @@ const AdmisionHeader = ({
 		return (
 			<header className='AdmisionHeader relative'>
 				<AdmisionNavbar />
-				{/* <Particles
+				 <Particles
 					id='tsparticles'
 					particlesLoaded={particlesLoaded}
 					options={options}
 					className=' w-full h-[40rem] absolute top-0 left-0'
-				/> */}
+				/> *
 
 				<Containerp className='AdmisionHeader__container'>
 					<section className='AdmisionHeader__container__text'>
