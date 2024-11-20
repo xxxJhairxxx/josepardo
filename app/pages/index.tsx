@@ -4,9 +4,11 @@ import { SeoEngine } from '@/components/globals';
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
 import AdmisionBeneficios from '@/components/organisms/AdmisionBeneficios';
 import AdmisionBlog from '@/components/organisms/AdmisionBlog';
+import AdmisionConvenios from '@/components/organisms/AdmisionConvenios';
 import AdmisionEspecialidades from '@/components/organisms/AdmisionEspecialidades';
 import AdmisionFormMobile from '@/components/organisms/AdmisionFormMobile';
 import AdmisionModalidades from '@/components/organisms/AdmisionModalidades';
+import AdmisionTestimonios from '@/components/organisms/AdmisionTestimonios';
 import { Blog, BlogData, Especialidades, EspecialidadesData } from '@/interfaces';
 import { Admision, AdmisionData } from '@/interfaces/admision';
 import { baseApi } from '@/lib/baseApi';
@@ -60,7 +62,16 @@ export default function Index({ admision, especialidades, blogpost }: AdminionPr
 					subtitulo={admision.AdmisionBlog.subtitulo}
 					blogpost={blogpost} />}
 
+			<AdmisionConvenios
+				titulo={admision.AdmisionConvenios.titulo}
+				logo={admision.AdmisionConvenios.logo}
+			/>
 
+			{admision.AdmisionTestimonios.Cardtestimonios.length > 0 &&
+				<AdmisionTestimonios
+					titulo={admision.AdmisionTestimonios.titulo}
+					subtitulo={admision.AdmisionTestimonios.subtitulo} />}
+			
 			<SeoEngine seo={admision.seo} />
 		</>
 	);

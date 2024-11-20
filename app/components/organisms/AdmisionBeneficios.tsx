@@ -3,15 +3,17 @@ import { Title } from '../atoms'
 import { CardBenefits } from '@/interfaces/admision'
 import BenefitsCard from '../molecules/Admision/BenefitsCard';
 
-interface props{
-    titulo:string,
-    subtitulo:string;
+
+interface props {
+    titulo: string,
+    subtitulo: string;
     CardBenefits: CardBenefits[];
 }
 
-const AdmisionBeneficios = ({CardBenefits,titulo,subtitulo}:props) => {
+const AdmisionBeneficios = ({ CardBenefits, titulo, subtitulo }: props) => {
     return (
-        <div className='admisionBeneficios' data-section="/middle">
+        <section className='admisionBeneficios' data-section="/middle">
+
             <div className="admisionBeneficios__containerTitle">
                 <Title
                     className="admisionBeneficios__containerTitle-title"
@@ -25,7 +27,7 @@ const AdmisionBeneficios = ({CardBenefits,titulo,subtitulo}:props) => {
                     <BenefitsCard key={id} titulo={titulo} image={image} />
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

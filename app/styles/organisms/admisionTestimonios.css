@@ -1,0 +1,56 @@
+/** @format */
+
+.admisionTestimonios {
+	@apply py-[6rem] relative z-50;
+	&__bg{
+		@apply absolute top-0 left-0 w-full h-full object-cover;
+		
+		
+	}
+
+	&:after{
+		@apply bg-[#1E40AF]/[56%] z-10 left-0 top-0 absolute w-full h-full;
+		content: "";
+	}
+
+	&__container {
+		@apply flex flex-col gap-5 relative z-20;
+
+		&__text {
+			@apply text-[#d6d6d6] text-center;
+		}
+
+		&__cards {
+			@apply flex flex-col items-center gap-10 w-[100%];
+		}
+	}
+
+	@screen tablet {
+		&__container {
+			&__text {
+				@apply text-center;
+			}
+		}
+		&-slider {
+			width: 100%;
+		}
+	}
+
+	@screen laptop {
+		@apply relative z-50;
+
+		padding: calc(8rem * var(--scale)) 0;
+
+		&__container {
+			&__text {
+				@apply text-center w-full mx-auto;
+			}
+
+			&__cards {
+				@apply flex-row justify-center;
+				padding: calc(4rem * var(--scale)) 0;
+				gap: calc(6rem * var(--scale));
+			}
+		}
+	}
+}

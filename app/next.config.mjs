@@ -1,7 +1,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     remotePatterns: [
       {
@@ -11,7 +10,7 @@ const nextConfig = {
         pathname: '**',
       },
     ],
-  },
+  }
 }
 
 export default nextConfig

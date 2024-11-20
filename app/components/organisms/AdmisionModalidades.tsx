@@ -7,7 +7,6 @@ import { Container } from '../globals';
 import { Modalidades } from '@/interfaces/admision';
 import ModalidadCard from '@/components/molecules/Admision/ModalidadCard'
 import Thumb from '../atoms/Thumb';
-import ReactMarkdown from 'react-markdown';
 
 interface props {
 	titulo: string;
@@ -24,7 +23,7 @@ const admisionModalidades = ({ titulo, subtitulo, texto, imagen, modalidades }: 
 
 				<div className='admisionModalities__container__text'>
 					<Title title={titulo} subtitle={subtitulo} />
-					<ReactMarkdown>{texto}</ReactMarkdown>
+					<p>{texto}</p>
 
 					<div className='admisionModalities__container__text__cards'>
                     {modalidades.map(({id,titulo,descripcion,logo}) => (

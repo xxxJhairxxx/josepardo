@@ -1,6 +1,7 @@
 /** @format */
 
-import {Picture } from '.';
+import { Picture } from "./shared";
+
 
 export interface Especialidades {
 	data: EspecialidadesData[];
