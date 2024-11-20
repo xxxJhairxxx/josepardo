@@ -857,38 +857,6 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   };
 }
 
-export interface ApiEnviromentEnviroment extends Schema.SingleType {
-  collectionName: 'enviroments';
-  info: {
-    singularName: 'enviroment';
-    pluralName: 'enviroments';
-    displayName: 'Enviroment';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    ENV: Attribute.Enumeration<['DEVELOPMENT', 'PRODUCTION']> &
-      Attribute.DefaultTo<'DEVELOPMENT'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::enviroment.enviroment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::enviroment.enviroment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiEspecialidadEspecialidad extends Schema.CollectionType {
   collectionName: 'especialidades';
   info: {
@@ -1009,7 +977,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::admision.admision': ApiAdmisionAdmision;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
-      'api::enviroment.enviroment': ApiEnviromentEnviroment;
       'api::especialidad.especialidad': ApiEspecialidadEspecialidad;
       'api::general.general': ApiGeneralGeneral;
       'api::user-register.user-register': ApiUserRegisterUserRegister;

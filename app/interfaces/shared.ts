@@ -91,7 +91,7 @@ export interface MetaSEO {
   metaViewport?: string
   canonicalURL?: string
   metaImage: Icon
-  metaSocial: MetaSocial[]
+  metaSocial: MetaSocial
 }
 
 export interface Icon {
@@ -111,7 +111,6 @@ export interface Icon {
 }
 export interface MetaSocial {
   id: number
-  socialNetwork: string
   title: string
   description: string
   image: Icon

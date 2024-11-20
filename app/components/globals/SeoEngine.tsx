@@ -14,25 +14,29 @@ export const SeoEngine: FC<SeoEngineProps> = ({ seo }) => {
          <link rel="canonical" href={seo.canonicalURL || ""}></link>
          <meta name="description" content={seo.metaDescription || ""} />
          <meta name="keywords" content={seo.keywords || ""} />
-         <meta name="robots" content="index, follow" />
+         <meta name="robots" content={seo.metaRobots || "index, follow"} />
+         <meta name="viewport" content={seo.metaViewport || "width=device-width, initial-scale=1.0"}></meta>
          <meta name="author" content="Jhair Hernan Infanzon Quispe" />
          <meta name="publisher" content="Jhair Hernan Infanzon Quispe" />
 
+         <meta property="og:url" content={seo.canonicalURL || ""} />
+         <meta property="og:type" content="website" />
+         <meta property="og:title" content={seo.metaSocial.title} />
+         <meta property="og:site_name" content={seo.metaSocial.title} />
+         <meta property="og:description" content={seo.metaSocial.description} />
+         <meta property="og:image" content={seo.metaSocial.image.url} />
+         <meta property="og:locale" content="es_ES" />
+
+         <meta name="twitter:card" content="summary_large_image" />
+         <meta name="twitter:url" content={seo.canonicalURL || ""} />
+         <meta name="twitter:title" content={seo.metaSocial.title} />
+         <meta name="twitter:description" content={seo.metaSocial.description} />
+         <meta name="twitter:image" content={seo.metaSocial.image.url} />
 
 
-         {/* <---->>> Meta Social Support <<<------> */}
 
-         {seo.metaSocial.length > 0 &&
-            seo.metaSocial.map(({ id, description, image, socialNetwork, title }) => {
-               const name = `${socialNetwork.toLocaleLowerCase()}:`;
-               return (
-                  <>
-                     <meta name={`${name}title`} content={title} />
-                     <meta name={`${name}description`} content={description} />
-                     <meta name={`${name}image`} content={image.url} />
-                  </>
-               );
-            })}
+
+
       </Head>
    );
 };
