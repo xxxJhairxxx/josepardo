@@ -6,11 +6,15 @@
 	&__container {
 		&__title {
 			@apply text-[#D4D2FF] text-[1.9rem] uppercase text-center;
-            font-size: calc(2.8rem * var(--scale));
+			@screen laptop {
+				font-size: calc(2.8rem * var(--scale));
+			}
 		}
 		&__logoCards {
 			@apply flex py-[4rem] justify-center gap-10;
-					padding: calc(6rem * var(--scale)) 0;
+			@screen laptop {
+				padding: calc(6rem * var(--scale)) 0;
+			}
 
 			&__thumb {
 				@apply bg-white h-[12rem] px-[2rem] w-[20rem];
