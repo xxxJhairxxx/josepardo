@@ -124,6 +124,7 @@ export interface AdmisionCardtestimonios extends Schema.Component {
   collectionName: 'components_admision_cardtestimonios';
   info: {
     displayName: 'Cardtestimonios';
+    description: '';
   };
   attributes: {
     imagen: Attribute.Media;

@@ -1,19 +1,21 @@
 {
   "collectionName": "components_admision_cardtestimonios",
   "info": {
-    "displayName": "Cardtestimonios"
+    "displayName": "Cardtestimonios",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "comentario": {
       "type": "text"

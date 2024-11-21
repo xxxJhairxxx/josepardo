@@ -1,11 +1,11 @@
 /** @format */
 
 .BlogCard {
-	@apply w-[92%] overflow-hidden bg-[#4920A7]/20;
+	@apply w-[92%] tablet:w-[58%] overflow-hidden bg-[#4920A7]/20;
 	border-radius: 5px;
 
 	&__thumb {
-		@apply h-[20rem] w-full;
+		@apply h-[20rem] tablet:h-[24rem] w-full;
 		img {
 			@apply object-top;
 		}
@@ -23,7 +23,7 @@
 			}
 		}
 		&__title {
-			@apply my-5  font-[600] text-[1.8rem] text-start tablet:text-[2.5rem];
+			@apply my-5  font-[600] text-[1.8rem] text-start tablet:text-[2.2rem];
 		}
 		&__text {
 			@apply text-start font-[300];

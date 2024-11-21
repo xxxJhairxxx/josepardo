@@ -34,6 +34,12 @@
 		&__content {
 			@apply flex justify-between items-center;
 			&__description {
+				&__logo{
+					.logoCont__thumb {
+						width: calc(24rem * var(--scale));
+					}
+					
+				}
 				@apply w-[40%];
 			}
 

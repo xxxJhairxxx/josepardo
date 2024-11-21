@@ -17,10 +17,10 @@
 			}
 
 			&__thumb {
-				@apply bg-white h-[12rem] px-[2rem] w-[20rem];
+				@apply bg-white h-[10rem] tablet:h-[16rem] px-[2rem] tablet:px-[4rem] w-full;
 
 				@screen laptop {
-					width: calc(30rem * var(--scale));
+				
 					height: calc(18rem * var(--scale));
 				}
 			}

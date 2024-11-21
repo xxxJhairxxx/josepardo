@@ -70,7 +70,9 @@ export default function Index({ admision, especialidades, blogpost }: AdminionPr
 			{admision.AdmisionTestimonios.Cardtestimonios.length > 0 &&
 				<AdmisionTestimonios
 					titulo={admision.AdmisionTestimonios.titulo}
-					subtitulo={admision.AdmisionTestimonios.subtitulo} />}
+					subtitulo={admision.AdmisionTestimonios.subtitulo} 
+					testimonios={admision.AdmisionTestimonios.Cardtestimonios}/>
+					}
 			
 			<SeoEngine seo={admision.seo} />
 		</>

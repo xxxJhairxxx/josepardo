@@ -1,0 +1,27 @@
+.testimonioCard{
+    @apply flex gap-[4rem]  flex-col items-center;
+
+    &__perfil{
+        @apply w-[8rem] h-[8rem] border-[0.3rem] border-secondary rounded-full overflow-hidden;
+        img{
+            @apply object-top ;
+        }
+    }
+
+    &__comentario{
+        @apply flex items-center text-center italic w-[24rem] h-[22rem] leading-[2.4rem];
+    }
+    &__footer{
+        
+        &__text{
+            @apply flex flex-col items-center gap-[1.5rem];
+
+         &__name{
+            @apply text-[2.2rem] font-[500];
+         }   
+        &__job{
+            @apply text-[1.6rem] font-[400];
+        }
+        }
+    }
+}

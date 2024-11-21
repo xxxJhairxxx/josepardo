@@ -11,7 +11,7 @@
 		}
 
 		&__cards {
-			@apply flex flex-col items-center gap-10 w-[100%];
+			@apply flex flex-col py-[2rem] items-center gap-10 w-[100%];
 		}
 	}
 

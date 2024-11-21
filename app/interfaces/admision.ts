@@ -105,12 +105,12 @@ interface AdmisioTestimonios {
 	Cardtestimonios: Cardtestimonios[];
 }
 
-interface Cardtestimonios {
+export interface Cardtestimonios {
 	id: 1;
 	comentario: string;
 	nombre: string;
 	ocupacion: string;
-	imagen: Picture | null;
+	imagen: Picture;
 }
 
 interface AdmisionBlog {
