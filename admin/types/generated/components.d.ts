@@ -100,6 +100,7 @@ export interface AdmisionAdmisionTestimonios extends Schema.Component {
   collectionName: 'components_admision_admision_testimonios';
   info: {
     displayName: 'AdmisionTestimonios';
+    description: '';
   };
   attributes: {
     titulo: Attribute.String;
@@ -128,7 +129,10 @@ export interface AdmisionCardtestimonios extends Schema.Component {
   };
   attributes: {
     imagen: Attribute.Media;
-    comentario: Attribute.Text;
+    comentario: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 210;
+      }>;
     nombre: Attribute.String;
     ocupacion: Attribute.String;
   };

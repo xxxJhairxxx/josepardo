@@ -1,7 +1,8 @@
 {
   "collectionName": "components_admision_admision_testimonios",
   "info": {
-    "displayName": "AdmisionTestimonios"
+    "displayName": "AdmisionTestimonios",
+    "description": ""
   },
   "options": {},
   "attributes": {

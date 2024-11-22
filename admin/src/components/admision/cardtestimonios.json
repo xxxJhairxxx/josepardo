@@ -18,7 +18,8 @@
       ]
     },
     "comentario": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 210
     },
     "nombre": {
       "type": "string"

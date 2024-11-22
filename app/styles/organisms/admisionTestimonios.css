@@ -47,9 +47,10 @@
 			}
 
 			&__cards {
-				@apply flex-row justify-center;
+				@apply flex-row justify-center  mx-auto;
 				padding: calc(4rem * var(--scale)) 0;
 				gap: calc(6rem * var(--scale));
+				width:calc(40rem * var(--scale)) ;
 			}
 		}
 	}

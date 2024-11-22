@@ -62,7 +62,7 @@ const AdmisionTestimonios = ({ titulo, subtitulo, testimonios }: props) => {
                 <Title title={titulo} subtitle={subtitulo} className='admisionTestimonios__container__text' />
 
                 <div className='admisionTestimonios__container__cards'>
-
+                    
                     <Swiper {...SwiperOptions} className="mySwiper">
                         {testimonios.map(({ id, imagen, comentario, nombre, ocupacion }) =>
                             <SwiperSlide key={id} className="SwiperSlide">
