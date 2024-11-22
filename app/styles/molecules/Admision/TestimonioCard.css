@@ -1,7 +1,7 @@
 /** @format */
 
 .testimonioCard {
-	@apply flex gap-[2rem]  flex-col items-center;
+	@apply flex gap-[2rem] relative z-[20] flex-col items-center;
 
 	&__perfil {
 		@apply w-[8rem] h-[8rem] border-[0.3rem] border-secondary rounded-full overflow-hidden;
@@ -12,10 +12,13 @@
 
 	&__comentario {
 		@apply flex items-center text-[1.7rem] text-center italic w-[24rem] h-[22rem]  leading-[2.5rem];
+		p{
+			@apply text-white;
+		}
 	}
 	&__footer {
 		&__text {
-			@apply flex flex-col items-center gap-[1.5rem];
+			@apply flex flex-col text-white items-center gap-[1.5rem];
 
 			&__name {
 				@apply text-[2.2rem] font-[500];
@@ -27,7 +30,7 @@
 	}
 
 	@screen laptop {
-		gap: calc(3rem * var(--scale));
+		gap: calc(2rem * var(--scale));
 
 		&__perfil {
 			width: calc(11rem * var(--scale));
@@ -36,11 +39,12 @@
 		}
 
 		&__comentario {
-		
-            font-size: calc(2rem * var(--scale));
-            width: calc(29rem * var(--scale));
-            height: calc(31rem * var(--scale));
+			@apply  w-full;
+            font-size: calc(2.4rem * var(--scale));
+            height: calc(25rem * var(--scale));
             line-height: calc(3.2rem * var(--scale));
+
+
 		}
 		&__footer {
 			&__text {

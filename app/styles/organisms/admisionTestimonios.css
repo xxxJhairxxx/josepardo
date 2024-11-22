@@ -2,26 +2,29 @@
 
 .admisionTestimonios {
 	@apply py-[6rem] relative z-50;
-	&__bg{
+	&__bg {
 		@apply absolute top-0 left-0 w-full h-full object-cover;
-		
-		
 	}
 
-	&:after{
+	&:after {
 		@apply bg-[#1E40AF]/[56%] z-10 left-0 top-0 absolute w-full h-full;
-		content: "";
+		content: '';
 	}
 
 	&__container {
 		@apply flex flex-col gap-5 relative z-20;
 
 		&__text {
-			@apply text-[#d6d6d6] text-center;
+			@apply text-center;
 		}
 
 		&__cards {
-			@apply flex  items-center gap-10 w-[100%];
+			@apply flex justify-between  items-center gap-10 w-[100%];
+			z-index: 100;
+			&-next,
+			&-prev {
+				@apply text-white relative h-[4rem] w-[4rem] flex items-center justify-center;
+			}
 		}
 	}
 
@@ -37,9 +40,9 @@
 	}
 
 	@screen laptop {
-		@apply relative z-50;
+		@apply relative z-[100];
 
-		padding: calc(8rem * var(--scale)) 0;
+		padding: calc(9rem * var(--scale)) 0;
 
 		&__container {
 			&__text {
@@ -50,7 +53,20 @@
 				@apply flex-row justify-center  mx-auto;
 				padding: calc(4rem * var(--scale)) 0;
 				gap: calc(6rem * var(--scale));
-				width:calc(40rem * var(--scale)) ;
+				column-gap: calc(10rem * var(--scale));
+				width: calc(70rem * var(--scale));
+
+				&-next,
+				&-prev {
+					@apply text-white  hover:scale-125 transition-all  cursor-pointer;
+					width: calc(7.7rem * var(--scale));
+					height: calc(7.7rem * var(--scale));
+					pointer-events: auto;
+					i {
+						@apply font-extralight;
+						font-size: calc(2rem * var(--scale));
+					}
+				}
 			}
 		}
 	}
