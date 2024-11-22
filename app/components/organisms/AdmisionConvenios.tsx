@@ -56,7 +56,7 @@ const AdmisionConvenios = ({ titulo, logo }: props) => {
                 <div className='admisionConvenios__container__logoCards'>
                     <Swiper {...swiperOptions} className="mySwiper">
                         {logo.map((item) => (
-                            <SwiperSlide key={item.id} className="SwiperSlide bg-red-500">
+                            <SwiperSlide key={item.id} className="SwiperSlide">
                                 <Thumb className='admisionConvenios__container__logoCards__thumb' key={item.id} image={item} />
                             </SwiperSlide>
                         ))}
