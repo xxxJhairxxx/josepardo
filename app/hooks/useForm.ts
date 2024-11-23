@@ -140,7 +140,7 @@ export const useForm = (
         errorsCopy[errorKey] = messages.invalid_required
         setTimeout(() => {
           setError(errorKey, '')
-        }, 4000)
+        }, 6000)
         return
       }
       errorsCopy[errorKey] = ''

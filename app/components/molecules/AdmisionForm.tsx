@@ -3,7 +3,7 @@ import { useForm } from "@/hooks/useForm";
 import ReCAPTCHA, { ReCAPTCHA as ReCAPTCHAType } from 'react-google-recaptcha';
 import { useGenerals } from '@/context/generals.context';
 import { AdmisionFormp } from '@/interfaces/admision';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Loader } from '../atoms/Loader';
 import { EspecialidadesData } from '@/interfaces';
 import Alert from '../atoms/Alert';
@@ -61,13 +61,9 @@ const AdmisionForm = ({
 		}
 	};
 
-	const showAlert = (text: string) => {
-		setMensaje(text);
-		setShowCaptchaError(true);
-		setTimeout(() => {
-			setShowCaptchaError(false);
-		}, 5000);
-	};
+
+
+
 
 
 
@@ -111,9 +107,8 @@ const AdmisionForm = ({
 							</option>
 						))}
 					</select>
-					{errors.carrera && (
-						<span className="Form-error">{errors.carrera}</span>
-					)}
+					<Alert catchError={errors.carrera.length !== 0} message={errors.carrera}/>
+					
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<input
@@ -124,7 +119,7 @@ const AdmisionForm = ({
 						name={email.name}
 						value={formState.email}
 					/>
-					{errors.email && <span className="Form-error">{errors.email}</span>}
+					<Alert catchError={errors.email.length !== 0} message={errors.email}/>
 				</div>
 				<div className='AdmisionForm__form-input'>
 					<input
@@ -136,6 +131,7 @@ const AdmisionForm = ({
 						onKeyDown={phoneNumberFormatter}
 						name={celular.name}
 						value={formState.phone}
+						maxLength={11}
 					/>
 				</div>
 
@@ -161,8 +157,6 @@ const AdmisionForm = ({
 						</span>
 					</div>
 				)}
-
-				<Alert catchError={ShowCaptchaError} message={mensaje} />
 			</form>
 		</div>
 	);

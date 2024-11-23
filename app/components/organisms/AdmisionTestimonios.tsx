@@ -20,7 +20,7 @@ const swiperOptions: SwiperOptions = {
         prevEl: ".admisionTestimonios__container__cards-prev",
         nextEl: ".admisionTestimonios__container__cards-next",
     },
-    speed: 700,
+    speed: 900,
     slidesPerView: "auto",
     breakpoints: {
         300: {

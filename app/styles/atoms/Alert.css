@@ -1,33 +1,36 @@
 /** @format */
 
-.alert_error {
-	@apply fixed w-fit  scale-x-0 opacity-0 overflow-hidden top-[10rem] right-[2rem] z-[1000] bg-red-100  text-red-500 pl-[4rem] pr-[1.5rem] py-5 rounded-xl;
-	transition-duration: 0.4s;
-	transform-origin: right;
+.contentAlert {
+	@apply fixed top-[10rem] overflow-hidden flex items-center right-[2rem] z-[1000] w-fit h-[5rem];
+	&__alert_error {
+		@apply min-w-[20rem] w-fit opacity-0 h-[4rem] translate-x-full flex items-center bg-red-100 z-[1100] text-red-500 pl-[4rem] pr-[1.5rem] py-5 rounded-xl;
+
+		transition: all 0.4s ease-in-out;
+		&:before {
+			content: '';
+			@apply left-5 w-8 h-9 bg-cover absolute;
+			background-image: url('/images/error.png');
+			@screen laptop {
+				width: calc(3rem * var(--scale));
+				height: calc(3rem * var(--scale));
+				left: calc(1.7rem * var(--scale));
+			}
+		}
+	}
 
 	@screen laptop {
-		@apply fixed right-[10rem]  rounded-xl;
 		font-size: calc(1.9rem * var(--scale));
 		padding-left: calc(5rem * var(--scale));
 		padding-right: calc(2rem * var(--scale));
 		padding-block: calc(2rem * var(--scale));
 		top: calc(10rem * var(--scale));
 		right: calc(10rem * var(--scale));
-	}
 
-	&:before {
-		content: '';
-		@apply top-6 left-5 w-8 h-8 bg-cover absolute;
-		background-image: url('/images/error.png');
-		@screen laptop {
-			width: calc(3rem * var(--scale));
-			height: calc(3rem * var(--scale));
-			top: calc(2rem * var(--scale));
-			left: calc(1.7rem * var(--scale));
+		&__alert_error.alert_transiton {
+				@apply opacity-100 translate-x-0;
+			
 		}
 	}
-}
 
-.alert_transiton {
-	@apply opacity-100 scale-x-100;
+	
 }

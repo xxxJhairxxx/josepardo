@@ -61,6 +61,8 @@ const AdmisionConvenios = ({ titulo, logo }: props) => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <div className="swiper-pagination"></div>
+
                 </div>
 
             </Container>

@@ -8,30 +8,31 @@ export const convertSpan = (text: string) => {
 export const convert = (text: string) => {
    return text.replace("/", "");
 };
+
 export const formatPhoneNumber = (value: string) => {
-   // if input value is false eg if the user deletes the input, then just return
+   // Si el input está vacío, devuelve el valor vacío.
    if (!value) return value;
 
-   // clean the input for any non-digit values.
-   const phoneNumber = value.replace(/[^\d]/g, "");
+   // Limpia el input eliminando todo lo que no sean dígitos y limita a 9 caracteres.
+   const phoneNumber = value.replace(/[^\d]/g, "").slice(0, 9);
 
-   // phoneNumberLength is used to know when to apply our formatting for the phone number
+   // Obtén la longitud del número limpio.
    const phoneNumberLength = phoneNumber.length;
 
-   // we need to return the value with no formatting if its less than four digits
-   // this is to avoid weird behavior that occurs if you  format the area code too early
-   if (phoneNumberLength < 4) return phoneNumber;
+   // Si tiene menos de 4 dígitos, devuelve el número sin formato.
+   if (phoneNumberLength <= 3) return phoneNumber;
 
-   // if phoneNumberLength is greater than 4 and less the 7 we start to return
-   // the formatted number
-   if (phoneNumberLength < 7) {
-      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+   // Si tiene entre 4 y 6 dígitos, formatea en el estilo "XXX XXX".
+   if (phoneNumberLength <= 6) {
+      return `${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3)}`;
    }
 
-   // finally, if the phoneNumberLength is greater then seven, we add the last
-   // bit of formatting and return it.
-   return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 9)}`;
+   // Si tiene entre 7 y 9 dígitos, formatea como "XXX XXX XXX".
+   return `${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3, 6)} ${phoneNumber.slice(6)}`;
 };
+
+
+
 
 export const currency = (num: number) =>
    num.toLocaleString("en-Us", {

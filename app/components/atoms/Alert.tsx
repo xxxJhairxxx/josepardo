@@ -9,8 +9,11 @@ interface props {
 
 const Alert = ({ catchError = false, message }: props) => {
 	return (
-		<div className={`alert_error ${catchError ? 'alert_transiton' : ''}`}>
-			{message}
+		<div className="contentAlert">
+
+			<div className={`contentAlert__alert_error ${catchError ? 'alert_transiton' : ''}`}>
+				{message}
+			</div>
 		</div>
 	);
 };
