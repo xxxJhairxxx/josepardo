@@ -207,7 +207,7 @@ module.exports = (plugin) => {
 																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Celular:&nbsp; &nbsp; </strong>${phone}</p>
 																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;"><strong>Email:&nbsp; &nbsp; &nbsp; </strong>${email}</p>
 																		<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 18px;">&nbsp;</p>
-																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;">Para consultar la lista de Alumnos ve a este <span style="word-break: break-word; color: #1e40af;"><strong><a href="https://strapi.adminpardo.fun/admin" target="_blank" style="text-decoration:underline;color:#1e40af;" rel="noopener">enlace</a></strong></span></p>
+																		<p style="margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;">Para consultar la lista de Alumnos ve a este <span style="word-break: break-word; color: #1e40af;"><strong><a href="https://strapi.adminpardo.fun/admin/content-manager/collectionType/api::user-register.user-register?page=1&pageSize=10&sort=id:ASC" target="_blank" style="text-decoration:underline;color:#1e40af;" rel="noopener">enlace</a></strong></span></p>
 																	</div>
 																</div>
 															</td>
