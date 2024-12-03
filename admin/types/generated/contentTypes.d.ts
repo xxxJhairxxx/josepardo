@@ -922,6 +922,36 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
   };
 }
 
+export interface ApiTemplateEmailTemplateEmail extends Schema.SingleType {
+  collectionName: 'template_emails';
+  info: {
+    singularName: 'template-email';
+    pluralName: 'template-emails';
+    displayName: 'TemplateEmail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    html: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::template-email.template-email',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::template-email.template-email',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUserRegisterUserRegister extends Schema.CollectionType {
   collectionName: 'users_register';
   info: {
@@ -979,6 +1009,7 @@ declare module '@strapi/types' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::especialidad.especialidad': ApiEspecialidadEspecialidad;
       'api::general.general': ApiGeneralGeneral;
+      'api::template-email.template-email': ApiTemplateEmailTemplateEmail;
       'api::user-register.user-register': ApiUserRegisterUserRegister;
     }
   }
