@@ -14,6 +14,7 @@ export interface GeneralData {
 	label_buttons: LabelsButtons;
 	informacion: Informacion;
 	Footer:Footer;
+	Whatsapp:Whatsapp;
 }
 export interface Logo {
 	id: number;
@@ -60,4 +61,12 @@ export interface Footer{
 	text:string;
 	copyright:string;
 	lbl_siguenos:string
+}
+
+export interface Whatsapp{
+	enlace_invitacion:string;
+	whatsapp_numero:string;
+	mensaje_wsp:string
+	placeholder:string
+	title_chat:string
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { PropsWithChildren } from 'react'
 
 interface ButtonProps extends PropsWithChildren {
   url?: string

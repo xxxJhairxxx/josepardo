@@ -59,3 +59,20 @@ input {
     opacity: 1;
   }
 }
+
+
+
+
+.btnsWpp::-webkit-scrollbar{
+  width: 3px;
+  height: 3px;
+  cursor: pointer;
+  background-color: transparent;
+ 
+}
+
+.btnsWpp::-webkit-scrollbar-thumb {
+  @apply bg-gray-400;
+  border-radius: 10px;
+
+}

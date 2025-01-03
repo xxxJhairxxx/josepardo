@@ -1,6 +1,7 @@
 /** @format */
 
 import { SeoEngine } from '@/components/globals';
+import Whatsapp from '@/components/globals/Whatsapp';
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
 import AdmisionBeneficios from '@/components/organisms/AdmisionBeneficios';
 import AdmisionBlog from '@/components/organisms/AdmisionBlog';
@@ -75,6 +76,7 @@ export default function Index({ admision, especialidades, blogpost }: AdminionPr
 					}
 			
 			<SeoEngine seo={admision.seo} />
+			<Whatsapp />
 		</>
 	);
 }

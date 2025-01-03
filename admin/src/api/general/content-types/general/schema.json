@@ -29,6 +29,12 @@
       "type": "component",
       "repeatable": false,
       "component": "footer.footer"
+    },
+    "Whatsapp": {
+      "displayName": "Whatsapp",
+      "type": "component",
+      "repeatable": false,
+      "component": "general.whatsapp"
     }
   }
 }

@@ -214,6 +214,21 @@ export interface FooterFooter extends Schema.Component {
   };
 }
 
+export interface GeneralWhatsapp extends Schema.Component {
+  collectionName: 'components_general_whatsapps';
+  info: {
+    displayName: 'Whatsapp';
+    description: '';
+  };
+  attributes: {
+    enlace_invitacion: Attribute.String;
+    whatsap_numero: Attribute.String;
+    mensaje_wsp: Attribute.Text;
+    placeholder: Attribute.String;
+    title_chat: Attribute.String;
+  };
+}
+
 export interface InformacionInformacion extends Schema.Component {
   collectionName: 'components_informacion_informacions';
   info: {
@@ -326,6 +341,7 @@ declare module '@strapi/types' {
       'email.email': EmailEmail;
       'error-messages.mensajes-de-error': ErrorMessagesMensajesDeError;
       'footer.footer': FooterFooter;
+      'general.whatsapp': GeneralWhatsapp;
       'informacion.informacion': InformacionInformacion;
       'labels.labels': LabelsLabels;
       'shared.meta-social': SharedMetaSocial;

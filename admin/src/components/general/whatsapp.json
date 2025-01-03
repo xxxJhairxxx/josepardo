@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_general_whatsapps",
+  "info": {
+    "displayName": "Whatsapp",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "enlace_invitacion": {
+      "type": "string"
+    },
+    "whatsap_numero": {
+      "type": "string"
+    },
+    "mensaje_wsp": {
+      "type": "text"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "title_chat": {
+      "type": "string"
+    }
+  }
+}

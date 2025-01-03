@@ -48,10 +48,17 @@ const initialState: ControllerState = {
 			redes_sociales: [],
 			logo: [],
 		},
-		Footer:{
-			text:'',
-			copyright:'',
-			lbl_siguenos:''
+		Footer: {
+			text: '',
+			copyright: '',
+			lbl_siguenos: ''
+		},
+		Whatsapp: {
+			enlace_invitacion: '',
+			whatsapp_numero: '',
+			mensaje_wsp:'',
+			placeholder:'',
+			title_chat:''
 		}
 	},
 };
