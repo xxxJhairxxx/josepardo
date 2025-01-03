@@ -47,28 +47,31 @@ const Whatsapp = () => {
 
             {isOpen &&
                 <Modal closeModal={closeModal}>
-                    <div className='flex justify-between bg-[#1eb81e] text-white px-5 py-3'>
-                        <span>{Whatsapp.title_chat}</span>
-                        <button onClick={closeModal} className='cursor-pointer text-[1.2rem]'>X</button>
+                    <div className='containModalWpp z-[9999] fixed w-[95%] tablet:w-[40rem] bottom-[1rem] right-[1rem] h-[40rem] bg-white rounded-3xl overflow-hidden flex flex-col'>
+                        <div className='flex justify-between bg-[#1eb81e] text-white px-5 py-3'>
+                            <span>{Whatsapp.title_chat}</span>
+                            <button onClick={closeModal} className='cursor-pointer text-[1.2rem]'>X</button>
+                        </div>
+
+                        <section className='flex-1 flex flex-col justify-between pb-3'>
+                            <div className='px-3 py-5 '>
+                                <p className='bg-gray-50 rounded-3xl px-4 py-3 text-black'>{Whatsapp.mensaje_wsp + '👋'}</p>
+                            </div>
+                            <div className=' px-3 h-[20%]  flex justify-between items-center scroll-mx-0.5'>
+                                <textarea
+                                    className='btnsWpp w-full px-4 py-2 min-h-[5rem] bg-gray-50 border-2 rounded-3xl border-gray-50 focus:border-orange-400'
+                                    placeholder={Whatsapp.placeholder}
+                                    value={noteText}
+                                    onChange={(e) => setNoteText(e.target.value)}
+                                />
+
+                                <button className=' rounded-full bg-[#1eb81e] min-w-[3.5rem] mx-3 h-[3.5rem] flex items-center relative' onClick={handleWhatsappMessage}>
+                                    <svg height="20" viewBox="0 0 48 48" width="20" className='w-1/2 h-1/2 block absolute left-0 right-0 mx-auto invert-[100%] rotate-[320deg]' xmlns="http://www.w3.org/2000/svg"><path d="M4.02 42l41.98-18-41.98-18-.02 14 30 4-30 4z" /><path d="M0 0h48v48h-48z" fill="none" /></svg>
+                                </button>
+                            </div>
+                        </section>
                     </div>
 
-                    <section className='flex-1 flex flex-col justify-between pb-3'>
-                        <div className='px-3 py-5 '>
-                            <p className='bg-gray-50 rounded-3xl px-4 py-3 text-black'>{Whatsapp.mensaje_wsp + '👋'}</p>
-                        </div>
-                        <div className=' px-3 h-[20%]  flex justify-between items-center scroll-mx-0.5'>
-                            <textarea
-                                className='btnsWpp w-full px-4 py-2 min-h-[5rem] bg-gray-50 border-2 rounded-3xl border-gray-50 focus:border-orange-400'
-                                placeholder={Whatsapp.placeholder}
-                                value={noteText}
-                                onChange={(e) => setNoteText(e.target.value)}
-                            />
-
-                            <button className=' rounded-full bg-[#1eb81e] min-w-[3.5rem] mx-3 h-[3.5rem] flex items-center relative' onClick={handleWhatsappMessage}>
-                                <svg height="20" viewBox="0 0 48 48" width="20" className='w-1/2 h-1/2 block absolute left-0 right-0 mx-auto invert-[100%] rotate-[320deg]' xmlns="http://www.w3.org/2000/svg"><path d="M4.02 42l41.98-18-41.98-18-.02 14 30 4-30 4z" /><path d="M0 0h48v48h-48z" fill="none" /></svg>
-                            </button>
-                        </div>
-                    </section>
 
                 </Modal>
             }

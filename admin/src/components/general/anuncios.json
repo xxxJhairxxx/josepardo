@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_general_anuncios",
+  "info": {
+    "displayName": "Anuncios",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imagen": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

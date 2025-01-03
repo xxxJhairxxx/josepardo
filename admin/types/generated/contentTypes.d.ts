@@ -905,6 +905,7 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
     informacion: Attribute.Component<'informacion.informacion'>;
     Footer: Attribute.Component<'footer.footer'>;
     Whatsapp: Attribute.Component<'general.whatsapp'>;
+    Anuncios: Attribute.Component<'general.anuncios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

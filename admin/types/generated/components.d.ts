@@ -214,6 +214,17 @@ export interface FooterFooter extends Schema.Component {
   };
 }
 
+export interface GeneralAnuncios extends Schema.Component {
+  collectionName: 'components_general_anuncios';
+  info: {
+    displayName: 'Anuncios';
+    description: '';
+  };
+  attributes: {
+    imagen: Attribute.Media;
+  };
+}
+
 export interface GeneralWhatsapp extends Schema.Component {
   collectionName: 'components_general_whatsapps';
   info: {
@@ -341,6 +352,7 @@ declare module '@strapi/types' {
       'email.email': EmailEmail;
       'error-messages.mensajes-de-error': ErrorMessagesMensajesDeError;
       'footer.footer': FooterFooter;
+      'general.anuncios': GeneralAnuncios;
       'general.whatsapp': GeneralWhatsapp;
       'informacion.informacion': InformacionInformacion;
       'labels.labels': LabelsLabels;

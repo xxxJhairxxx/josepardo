@@ -59,6 +59,9 @@ const initialState: ControllerState = {
 			mensaje_wsp:'',
 			placeholder:'',
 			title_chat:''
+		},
+		Anuncios:{
+			imagen:[]
 		}
 	},
 };

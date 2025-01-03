@@ -2,6 +2,7 @@
 
 import { SeoEngine } from '@/components/globals';
 import Whatsapp from '@/components/globals/Whatsapp';
+import Anuncios from '@/components/molecules/Anuncios';
 import AdmisionBanner from '@/components/organisms/AdmisionBanner';
 import AdmisionBeneficios from '@/components/organisms/AdmisionBeneficios';
 import AdmisionBlog from '@/components/organisms/AdmisionBlog';
@@ -15,6 +16,7 @@ import { Admision, AdmisionData } from '@/interfaces/admision';
 import { baseApi } from '@/lib/baseApi';
 import { getGenerals } from '@/lib/getGenerals';
 import type { GetStaticProps } from 'next';
+import { useEffect, useState } from 'react';
 
 interface AdminionProps {
 	admision: AdmisionData;
@@ -23,6 +25,29 @@ interface AdminionProps {
 }
 
 export default function Index({ admision, especialidades, blogpost }: AdminionProps) {
+
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+
+
+	const closeModal = () => {
+		setIsModalOpen(false)
+	}
+
+
+	useEffect(() => {
+	  if (isModalOpen) {
+		document.body.style.overflow = "hidden";
+	  } else {
+		document.body.style.overflow = "";
+	  }
+  
+	  // Limpiar el estilo al desmontar el componente
+	  return () => {
+		document.body.style.overflow = "";
+	  };
+	}, [isModalOpen]);
+
+
 	return (
 		<>
 			<AdmisionBanner
@@ -71,11 +96,14 @@ export default function Index({ admision, especialidades, blogpost }: AdminionPr
 			{admision.AdmisionTestimonios.Cardtestimonios.length > 0 &&
 				<AdmisionTestimonios
 					titulo={admision.AdmisionTestimonios.titulo}
-					subtitulo={admision.AdmisionTestimonios.subtitulo} 
-					testimonios={admision.AdmisionTestimonios.Cardtestimonios}/>
-					}
-			
+					subtitulo={admision.AdmisionTestimonios.subtitulo}
+					testimonios={admision.AdmisionTestimonios.Cardtestimonios} />
+			}
+
 			<SeoEngine seo={admision.seo} />
+
+			{isModalOpen && <Anuncios closeModal={closeModal} />}
+
 			<Whatsapp />
 		</>
 	);

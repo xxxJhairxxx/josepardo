@@ -15,6 +15,7 @@ export interface GeneralData {
 	informacion: Informacion;
 	Footer:Footer;
 	Whatsapp:Whatsapp;
+	Anuncios:Anuncios;
 }
 export interface Logo {
 	id: number;
@@ -69,4 +70,8 @@ export interface Whatsapp{
 	mensaje_wsp:string
 	placeholder:string
 	title_chat:string
+}
+
+export interface Anuncios{
+	imagen:Picture[]
 }
